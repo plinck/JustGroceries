@@ -10,6 +10,7 @@
 		8EE4D44B9CC686540A14B97A /* libPods-JustGroceries.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A3AF04833DC4A23603BEA3 /* libPods-JustGroceries.a */; };
 		DA02E50E21D682FC002ADF22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA02E50D21D682FC002ADF22 /* Main.storyboard */; };
 		DA02E51021D68328002ADF22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA02E50F21D68328002ADF22 /* LaunchScreen.storyboard */; };
+		DA02E51421D693E0002ADF22 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DA02E51321D693E0002ADF22 /* README.md */; };
 		DA6882B721D67C4A004955AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6882B621D67C4A004955AD /* AppDelegate.swift */; };
 		DA6882BE21D67C4C004955AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6882BD21D67C4C004955AD /* Assets.xcassets */; };
 		DA6882CC21D67C4C004955AD /* JustGroceriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6882CB21D67C4C004955AD /* JustGroceriesTests.swift */; };
@@ -38,6 +39,7 @@
 		53A3AF04833DC4A23603BEA3 /* libPods-JustGroceries.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JustGroceries.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA02E50D21D682FC002ADF22 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../Grocr/Grocr/Main.storyboard; sourceTree = "<group>"; };
 		DA02E50F21D68328002ADF22 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DA02E51321D693E0002ADF22 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		DA6882B321D67C4A004955AD /* JustGroceries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustGroceries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA6882B621D67C4A004955AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA6882BD21D67C4C004955AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		DA6882B521D67C4A004955AD /* JustGroceries */ = {
 			isa = PBXGroup;
 			children = (
+				DA02E51321D693E0002ADF22 /* README.md */,
 				DAAA9AD821D67F4F00487F07 /* Views */,
 				DAAA9AD721D67F3200487F07 /* ViewControllers */,
 				DAAA9ADA21D67FB000487F07 /* Models */,
@@ -252,6 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA02E51421D693E0002ADF22 /* README.md in Resources */,
 				DAAA9ADC21D6819600487F07 /* Sample.json in Resources */,
 				DAAA9AD621D67E7600487F07 /* GoogleService-Info.plist in Resources */,
 				DA6882BE21D67C4C004955AD /* Assets.xcassets in Resources */,
