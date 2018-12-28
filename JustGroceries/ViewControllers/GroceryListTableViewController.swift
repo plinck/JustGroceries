@@ -43,7 +43,8 @@ class GroceryListTableViewController: UITableViewController {
         userCountBarButtonItem.tintColor = UIColor.white
         navigationItem.leftBarButtonItem = userCountBarButtonItem
         
-        user = User(uid: "FakeId", email: "hungry@person.food")
+        // setup default user to use before auth stuff is completed.
+        user = User(uid: "defaultId", email: "nobody@example.com")
         
         // You retrieve data in Firebase by attaching an asynchronous listener
         // to a reference using observe(_:with:).

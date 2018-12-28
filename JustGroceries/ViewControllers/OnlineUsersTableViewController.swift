@@ -23,7 +23,11 @@ class OnlineUsersTableViewController: UITableViewController {
   // MARK: UIViewController Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    currentUsers.append("hungry@person.food")
+    
+    // temporarily add example users
+    currentUsers.append("nobody@example.com")
+    currentUsers.append("sombody@example.com")
+    currentUsers.append("einstein@galaxy.net")
   }
   
   // MARK: UITableView Delegate methods
