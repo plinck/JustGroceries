@@ -20,6 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         // Initialize firebase
         FirebaseApp.configure()
+        
+        // Make the app work offline. Even offline updates that occur across app restarts will apply
+        // to Firebase database once a connection is made. Pretty nice.
+        Database.database().isPersistenceEnabled = true
+        
         return true
     }
 

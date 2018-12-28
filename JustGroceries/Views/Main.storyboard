@@ -159,7 +159,7 @@
                             <outlet property="delegate" destination="oUo-Uh-r42" id="Vps-L3-Bko"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Online" id="bjE-ul-xNJ">
+                    <navigationItem key="navigationItem" title="Users Online" id="bjE-ul-xNJ">
                         <barButtonItem key="rightBarButtonItem" id="Jg1-HM-Pok">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5NB-2W-SDq">
                                 <rect key="frame" x="276" y="5.5" width="83" height="33"/>
@@ -224,7 +224,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="oUo-Uh-r42" kind="show" identifier="ListToUsers" id="NRC-oz-J58"/>
+                        <segue destination="oUo-Uh-r42" kind="show" identifier="ToOnlineUsers" id="NRC-oz-J58"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRX-FK-8Yw" userLabel="First Responder" sceneMemberID="firstResponder"/>

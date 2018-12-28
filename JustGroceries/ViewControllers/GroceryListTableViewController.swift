@@ -11,19 +11,20 @@ import Firebase
 class GroceryListTableViewController: UITableViewController {
     
     // MARK: Constants
-    let listToUsers = "ListToUsers"
+    let toOnlineUsers = "ToOnlineUsers"
     
     // MARK: Properties
     var items: [GroceryItem] = []
     var user: User!
     var userCountBarButtonItem: UIBarButtonItem!
+    // firebase reference to all online users
+    let usersRef = Database.database().reference(withPath: "online")
     
     // establishes a connection to your Firebase database using the provided path
     // these Firebase properties are referred to as references because
     // they refer to a location in your Firebase database
     // In short, this property allows for saving and syncing of data to the given location.
     let ref = Database.database().reference(withPath: "grocery-items")
-    
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -36,7 +37,7 @@ class GroceryListTableViewController: UITableViewController {
         
         tableView.allowsMultipleSelectionDuringEditing = false
         
-        userCountBarButtonItem = UIBarButtonItem(title: "1",
+        userCountBarButtonItem = UIBarButtonItem(title: "Users:1",
                                                  style: .plain,
                                                  target: self,
                                                  action: #selector(userCountButtonDidTouch))
@@ -44,7 +45,7 @@ class GroceryListTableViewController: UITableViewController {
         navigationItem.leftBarButtonItem = userCountBarButtonItem
         
         // setup default user to use before auth stuff is completed.
-        user = User(uid: "defaultId", email: "nobody@example.com")
+        // user = User(uid: "defaultId", email: "nobody@example.com")
         
         // You retrieve data in Firebase by attaching an asynchronous listener
         // to a reference using observe(_:with:).
@@ -73,6 +74,34 @@ class GroceryListTableViewController: UITableViewController {
             self.items = newItems
             self.tableView.reloadData()
         })
+        
+        // Observer for online users count
+        usersRef.observe(.value, with: { snapshot in
+            if snapshot.exists() {
+                self.userCountBarButtonItem?.title = "Users:\(snapshot.childrenCount.description)"
+            } else {
+                self.userCountBarButtonItem?.title = "Users:0"
+            }
+        })
+        
+        // Attach an authentication observer to the Firebase auth object,
+        // which in turn assigns the user property when a user successfully signs in.
+        Auth.auth().addStateDidChangeListener { auth, user in
+            guard let user = user else { return }
+            self.user = User(authData: user)
+            
+            // Create a child reference using a user’s uid,
+            // which is generated when Firebase creates an account.
+            let currentUserRef = self.usersRef.child(self.user.uid)
+            
+            // Use this reference to save the current user’s email.
+            currentUserRef.setValue(self.user.email)
+            
+            // Call onDisconnectRemoveValue() on currentUserRef.
+            // This removes the value at the reference’s location after the connection to Firebase closes,
+            // e.g. when a user quits app. This is perfect for monitoring users who have gone offline.
+            currentUserRef.onDisconnectRemoveValue()
+        } // closure
     }// viewDidLoad
     
     // MARK: UITableView Delegate methods
@@ -186,6 +215,6 @@ class GroceryListTableViewController: UITableViewController {
     }
     
     @objc func userCountButtonDidTouch() {
-        performSegue(withIdentifier: listToUsers, sender: nil)
+        performSegue(withIdentifier: toOnlineUsers, sender: nil)
     }
 }
