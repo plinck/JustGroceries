@@ -11,20 +11,21 @@ import Firebase
 class GroceryListTableViewController: UITableViewController {
     
     // MARK: Constants
-    let toOnlineUsers = "ToOnlineUsers"
+    let toOnlineUsers = "ToOnlineUsers"     // Seque to list which users are online
     
     // MARK: Properties
     var items: [GroceryItem] = []
     var user: User!
     var userCountBarButtonItem: UIBarButtonItem!
-    // firebase reference to all online users
+    
+    // Firebase reference to all online users
     let usersRef = Database.database().reference(withPath: "online")
     
-    // establishes a connection to your Firebase database using the provided path
-    // these Firebase properties are referred to as references because
-    // they refer to a location in your Firebase database
+    // Establish a connection to Firebase database using the provided path.
+    // These Firebase properties are referred to as references because
+    // they refer to a location in your Firebase database.
     // In short, this property allows for saving and syncing of data to the given location.
-    let ref = Database.database().reference(withPath: "grocery-items")
+    let groceryItemsRef = Database.database().reference(withPath: "grocery-items")
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -44,15 +45,12 @@ class GroceryListTableViewController: UITableViewController {
         userCountBarButtonItem.tintColor = UIColor.white
         navigationItem.leftBarButtonItem = userCountBarButtonItem
         
-        // setup default user to use before auth stuff is completed.
-        // user = User(uid: "defaultId", email: "nobody@example.com")
-        
         // You retrieve data in Firebase by attaching an asynchronous listener
         // to a reference using observe(_:with:).
         // In this case, we want to sort the items by completion status so we use
-        // the firebase queryOrdered(:byChild:) for the "completed key
-        // OLD NON-Sorted way ==> ref.observe(.value, with: { snapshot in
-        ref.queryOrdered(byChild: "completed").observe(.value, with: { snapshot in
+        // the firebase queryOrdered(:byChild:) for the "completed" key
+        // NON-Sorted way ==> groceryItemsRef.observe(.value, with: { snapshot in
+        groceryItemsRef.queryOrdered(byChild: "completed").observe(.value, with: { snapshot in
             // Store the latest version of the data in a local variable inside the listener’s closure.
             var newItems: [GroceryItem] = []
             
@@ -197,7 +195,7 @@ class GroceryListTableViewController: UITableViewController {
                                           addedByUser: self.user.email,
                                           completed: false)
             // make sure key is lower case so it always matches
-            let groceryItemRef = self.ref.child(text.lowercased())
+            let groceryItemRef = self.groceryItemsRef.child(text.lowercased())
             
             // set value for the key, remember its just JSON
             groceryItemRef.setValue(groceryItem.toAnyObject())

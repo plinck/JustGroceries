@@ -128,17 +128,17 @@
 		DA6882B521D67C4A004955AD /* JustGroceries */ = {
 			isa = PBXGroup;
 			children = (
-				DAC64FC121D6C4BC00BA336A /* JustGroceries.entitlements */,
-				DA02E51321D693E0002ADF22 /* README.md */,
+				DA6882B621D67C4A004955AD /* AppDelegate.swift */,
 				DAAA9AD821D67F4F00487F07 /* Views */,
 				DAAA9AD721D67F3200487F07 /* ViewControllers */,
 				DAAA9ADA21D67FB000487F07 /* Models */,
 				DAAA9AD921D67F9600487F07 /* JSON */,
 				DAC64FB421D69E3A00BA336A /* images */,
-				DA6882B621D67C4A004955AD /* AppDelegate.swift */,
 				DA6882BD21D67C4C004955AD /* Assets.xcassets */,
 				DA6882C221D67C4C004955AD /* Info.plist */,
 				DAAA9AD521D67E7600487F07 /* GoogleService-Info.plist */,
+				DAC64FC121D6C4BC00BA336A /* JustGroceries.entitlements */,
+				DA02E51321D693E0002ADF22 /* README.md */,
 			);
 			path = JustGroceries;
 			sourceTree = "<group>";
