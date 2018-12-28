@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8EE4D44B9CC686540A14B97A /* libPods-JustGroceries.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A3AF04833DC4A23603BEA3 /* libPods-JustGroceries.a */; };
-		DA02E50E21D682FC002ADF22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA02E50D21D682FC002ADF22 /* Main.storyboard */; };
 		DA02E51021D68328002ADF22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA02E50F21D68328002ADF22 /* LaunchScreen.storyboard */; };
 		DA02E51421D693E0002ADF22 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DA02E51321D693E0002ADF22 /* README.md */; };
 		DA6882B721D67C4A004955AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6882B621D67C4A004955AD /* AppDelegate.swift */; };
@@ -21,6 +20,7 @@
 		DAAA9AE421D681DA00487F07 /* OnlineUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA9AE121D681D900487F07 /* OnlineUsersTableViewController.swift */; };
 		DAAA9AE521D681DA00487F07 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA9AE221D681D900487F07 /* LoginViewController.swift */; };
 		DAAA9AE621D681DA00487F07 /* GroceryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA9AE321D681DA00487F07 /* GroceryListTableViewController.swift */; };
+		DAC64FB121D6968000BA336A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAC64FB021D6968000BA336A /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,6 @@
 		09428A074E541D028D84D030 /* Pods-JustGroceries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGroceries.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JustGroceries/Pods-JustGroceries.debug.xcconfig"; sourceTree = "<group>"; };
 		34D5782343AAC985E89702A4 /* Pods-JustGroceries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGroceries.release.xcconfig"; path = "Pods/Target Support Files/Pods-JustGroceries/Pods-JustGroceries.release.xcconfig"; sourceTree = "<group>"; };
 		53A3AF04833DC4A23603BEA3 /* libPods-JustGroceries.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JustGroceries.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA02E50D21D682FC002ADF22 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../Grocr/Grocr/Main.storyboard; sourceTree = "<group>"; };
 		DA02E50F21D68328002ADF22 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA02E51321D693E0002ADF22 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		DA6882B321D67C4A004955AD /* JustGroceries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustGroceries.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +53,7 @@
 		DAAA9AE121D681D900487F07 /* OnlineUsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineUsersTableViewController.swift; sourceTree = "<group>"; };
 		DAAA9AE221D681D900487F07 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DAAA9AE321D681DA00487F07 /* GroceryListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryListTableViewController.swift; sourceTree = "<group>"; };
+		DAC64FB021D6968000BA336A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				DA02E50F21D68328002ADF22 /* LaunchScreen.storyboard */,
-				DA02E50D21D682FC002ADF22 /* Main.storyboard */,
+				DAC64FB021D6968000BA336A /* Main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -255,12 +255,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAC64FB121D6968000BA336A /* Main.storyboard in Resources */,
 				DA02E51421D693E0002ADF22 /* README.md in Resources */,
 				DAAA9ADC21D6819600487F07 /* Sample.json in Resources */,
 				DAAA9AD621D67E7600487F07 /* GoogleService-Info.plist in Resources */,
 				DA6882BE21D67C4C004955AD /* Assets.xcassets in Resources */,
 				DA02E51021D68328002ADF22 /* LaunchScreen.storyboard in Resources */,
-				DA02E50E21D682FC002ADF22 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
