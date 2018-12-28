@@ -15,6 +15,7 @@ This is a grocery list application that uses firebase to store and sync grocery 
 
 ### Todo
 * Add user authentication
+* Add face id and fingerprint for login
 * Add multiple grocery lists
 * Add ability to share a list with other users
 * Golden/Family list allowing simple version of app to quickly add items by others without going through muliple steps

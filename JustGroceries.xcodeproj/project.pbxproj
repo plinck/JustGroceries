@@ -21,6 +21,12 @@
 		DAAA9AE521D681DA00487F07 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA9AE221D681D900487F07 /* LoginViewController.swift */; };
 		DAAA9AE621D681DA00487F07 /* GroceryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA9AE321D681DA00487F07 /* GroceryListTableViewController.swift */; };
 		DAC64FB121D6968000BA336A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAC64FB021D6968000BA336A /* Main.storyboard */; };
+		DAC64FBB21D69E3A00BA336A /* IMG_0766.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAC64FB521D69E3A00BA336A /* IMG_0766.jpg */; };
+		DAC64FBC21D69E3A00BA336A /* IMG_0767.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAC64FB621D69E3A00BA336A /* IMG_0767.jpg */; };
+		DAC64FBD21D69E3A00BA336A /* IMG_0765.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAC64FB721D69E3A00BA336A /* IMG_0765.jpg */; };
+		DAC64FBE21D69E3A00BA336A /* IMG_0770.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAC64FB821D69E3A00BA336A /* IMG_0770.jpg */; };
+		DAC64FBF21D69E3A00BA336A /* IMG_0769.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAC64FB921D69E3A00BA336A /* IMG_0769.jpg */; };
+		DAC64FC021D69E3A00BA336A /* IMG_0768.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAC64FBA21D69E3A00BA336A /* IMG_0768.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +60,12 @@
 		DAAA9AE221D681D900487F07 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DAAA9AE321D681DA00487F07 /* GroceryListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryListTableViewController.swift; sourceTree = "<group>"; };
 		DAC64FB021D6968000BA336A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		DAC64FB521D69E3A00BA336A /* IMG_0766.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0766.jpg; sourceTree = "<group>"; };
+		DAC64FB621D69E3A00BA336A /* IMG_0767.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0767.jpg; sourceTree = "<group>"; };
+		DAC64FB721D69E3A00BA336A /* IMG_0765.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0765.jpg; sourceTree = "<group>"; };
+		DAC64FB821D69E3A00BA336A /* IMG_0770.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0770.jpg; sourceTree = "<group>"; };
+		DAC64FB921D69E3A00BA336A /* IMG_0769.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0769.jpg; sourceTree = "<group>"; };
+		DAC64FBA21D69E3A00BA336A /* IMG_0768.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0768.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +132,7 @@
 				DAAA9AD721D67F3200487F07 /* ViewControllers */,
 				DAAA9ADA21D67FB000487F07 /* Models */,
 				DAAA9AD921D67F9600487F07 /* JSON */,
+				DAC64FB421D69E3A00BA336A /* images */,
 				DA6882B621D67C4A004955AD /* AppDelegate.swift */,
 				DA6882BD21D67C4C004955AD /* Assets.xcassets */,
 				DA6882C221D67C4C004955AD /* Info.plist */,
@@ -171,6 +184,19 @@
 				DAAA9ADD21D681BA00487F07 /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		DAC64FB421D69E3A00BA336A /* images */ = {
+			isa = PBXGroup;
+			children = (
+				DAC64FB521D69E3A00BA336A /* IMG_0766.jpg */,
+				DAC64FB621D69E3A00BA336A /* IMG_0767.jpg */,
+				DAC64FB721D69E3A00BA336A /* IMG_0765.jpg */,
+				DAC64FB821D69E3A00BA336A /* IMG_0770.jpg */,
+				DAC64FB921D69E3A00BA336A /* IMG_0769.jpg */,
+				DAC64FBA21D69E3A00BA336A /* IMG_0768.jpg */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,8 +282,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAC64FB121D6968000BA336A /* Main.storyboard in Resources */,
+				DAC64FBF21D69E3A00BA336A /* IMG_0769.jpg in Resources */,
+				DAC64FBE21D69E3A00BA336A /* IMG_0770.jpg in Resources */,
 				DA02E51421D693E0002ADF22 /* README.md in Resources */,
+				DAC64FC021D69E3A00BA336A /* IMG_0768.jpg in Resources */,
 				DAAA9ADC21D6819600487F07 /* Sample.json in Resources */,
+				DAC64FBC21D69E3A00BA336A /* IMG_0767.jpg in Resources */,
+				DAC64FBD21D69E3A00BA336A /* IMG_0765.jpg in Resources */,
+				DAC64FBB21D69E3A00BA336A /* IMG_0766.jpg in Resources */,
 				DAAA9AD621D67E7600487F07 /* GoogleService-Info.plist in Resources */,
 				DA6882BE21D67C4C004955AD /* Assets.xcassets in Resources */,
 				DA02E51021D68328002ADF22 /* LaunchScreen.storyboard in Resources */,
