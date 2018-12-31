@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Grocery List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-database.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div>
+        </div>
+        <div>
+            <h2>Groceries</h2>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class="main-container">
+        <!-- Main Content Container -->
+        <section class="row">
+            <div class="section-header row">
+                <div id="buttons-view"></div>
+            </div>
+            <div class="row">
+                <!-- form -->
+                <div id="searchForm" class="row">
+                    <label for="item-input">Add Item</label>
+                    <input type="text" id="item-input"><br>
+                    <input id="add-ietm" type="submit" value="Add">
+                </div>
+                <div class="section-header row">
+                    <div class="col-12">Grocery Items</div>
+                    <div id="errorMessage" class="col-12"></div>
+                </div>
+                <article class="articles row">
+                    <!-- grocery items go here -->
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    </script>
+
+</body>
+
+</html>
