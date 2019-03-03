@@ -63,60 +63,19 @@
     </nav>
     <!--  END NAV -->
 
-    <!-- START CONTENT -->
-    <main id="content">
-        <div class="container">
-            <div id="profile-page" class="section">
-                <!--  Firebase Login -->
-                <div id="loginContainer profile-page-header" style="display: none;">
-                    <div id="firebaseui-auth-container"></div>
-                    <div id="loader">Loading...</div>
-                </div>
-                <!--  END Firebase Login -->
-
-                <div id="profile-page-content" class="row">
-                    <div id="profile-page-sidebar" class="col s12 m4 l4">
-                        <!-- Profile About  -->
-                        <div class="card cyan">
-                            <div class="card-content white-text">
-                                <span id="currentPersonUsername" class="card-title"></span>
-                                <img src="" id="currentPersonProfilePicture" class="responsive-img">
-                                <p id="currentPersonAboutMe"></p>
-                            </div>
-                        </div>
-                        <!-- Profile About  -->
-                        <section class="card cyan">
-                            <div class="card-content white-text">
-                                <div id="buttons-view"></div>
-                            </div>
-                            <div class="card-content white-text">
-                                <!-- form -->
-                                <div id="searchForm" class="">
-                                    <label for="item-input">Add Item</label>
-                                    <input type="text" id="item-input"><br>
-                                    <input id="add-item" type="submit" value="Add">
-                                    <input id="delete-item" type="submit" value="Delete">
-                                </div>
-                                <div class="card-content white-text">
-                                    <div>Grocery Items</div>
-                                    <div id="errorMessage"></div>
-                                </div>
-                                <article class="articles">
-                                    <!-- grocery items go here -->
-                                </article>
-                            </div>
-                        </section>
-
-                    </div>
-                </div>
-            </div>
+    <!--  BODY -->
+    <div class="container" id="mainContainer" style="display: block;">
+        <div class="row"><br><br></div>
+        <div class="row">
+            <h4 class="center">Login to get started</h4>
+            <div id="firebaseui-auth-container"></div>
+            <div id="loader">Loading...</div>
         </div>
-    </main>
-    <!-- END CONTENT -->
-
+    </div>
+    <!--  BODY -->
 
     <!-- the js for this page  -->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/login.js"></script>
 
 </body>
 

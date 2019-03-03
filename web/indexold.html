@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Grocery List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Materialize -->
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <!-- ICONs -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--   profile page theme   -->
+    <link href="css/profileTheme.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase-database.js"></script>
+    <!-- Login -->
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="nav-wrapper container">
+                <a href="#!" class="brand-logo">Logo</a>
+                <!--  the data-target is what calls the sidenav to collapse -->
+                <a href="#" data-target="navCollapse" class="sidenav-trigger"><i class="material-icons">|||</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <!--  This button should only display on screens where someone is logged in.   -->
+                    <li><button class="waves-effect waves-light btn pull-right" onclick="logMeOut();">logout</button></li>
+                </ul>
+            </div>
+
+            <ul class="sidenav" id="navCollapse">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><button id="mobileLogout" class="waves-effect waves-light btn pull-right" onclick="logMeOut();">logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <main class="main-container">
+        <!-- Main Content Container -->
+        <section class="row">
+            <div class="section-header row">
+                <div id="buttons-view"></div>
+            </div>
+            <div class="row">
+                <!-- form -->
+                <div id="searchForm" class="row">
+                    <label for="item-input">Add Item</label>
+                    <input type="text" id="item-input"><br>
+                    <input id="add-item" type="submit" value="Add">
+                    <input id="delete-item" type="submit" value="Delete">
+                </div>
+                <div class="section-header row">
+                    <div class="col-12">Grocery Items</div>
+                    <div id="errorMessage" class="col-12"></div>
+                </div>
+                <article class="articles row">
+                    <!-- grocery items go here -->
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Materialize Compiled and minified JavaScript  -->
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+
+    <script type="text/javascript" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

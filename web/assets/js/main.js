@@ -97,4 +97,40 @@ $(document).ready(function () {
         firebaseDeleteItem(itemVal);
     });
 
-});  // document.ready
+}); // document.ready
+
+// Make sure authenticated
+firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+        // get the user ID from the firebase auth -- this should connect to our SQL User DB
+        userId = user.uid;
+        // Get user info from mySQLDB
+        // MAIN PROCESS + INITIAL CODE
+        // --------------------------------------------------------------------------------
+        $(document).ready(function () {
+
+            $("#add-item").on("click", function () {
+                // make it so it wont refresh the page when form submits
+                // eliminating form wrapper tag also does this
+                event.preventDefault();
+
+                // This line grabs the input from the textbox
+                let itemVal = $("#item-input").val().trim();
+                firebaseSaveItem(itemVal);
+            });
+
+            $("#delete-item").on("click", function () {
+                // make it so it wont refresh the page when form submits
+                // eliminating form wrapper tag also does this
+                event.preventDefault();
+
+                // This line grabs the input from the textbox
+                let itemVal = $("#item-input").val().trim();
+                firebaseDeleteItem(itemVal);
+            });
+
+        }); // document.ready
+    } else {
+        window.location.replace("login.html");
+    }
+});
