@@ -1,16 +1,4 @@
-// Initialize Firebase
-var config = {
-    apiKey: "AIzaSyAQflvsF9L2Zrw5183L9LlBXjxNBzewIho",
-    authDomain: "justgroceries-3af71.firebaseapp.com",
-    databaseURL: "https://justgroceries-3af71.firebaseio.com",
-    projectId: "justgroceries-3af71",
-    storageBucket: "justgroceries-3af71.appspot.com",
-    messagingSenderId: "410385570434"
-};
-
-firebase.initializeApp(config);
-
-// Get a reference to the database service
+// Get a reference to the database service - defined in auth common
 const dbRef = firebase.database().ref();
 const groceryItemsRef = dbRef.child('grocery-items'); // All grocery items
 const usersRef = dbRef.child('online'); // online users
@@ -72,42 +60,19 @@ function firebaseDeleteItem(itemVal) {
     groceryItemRef.remove();
 }
 
-
 // MAIN PROCESS + INITIAL CODE
 // --------------------------------------------------------------------------------
-$(document).ready(function () {
-
-    $("#add-item").on("click", function () {
-        // make it so it wont refresh the page when form submits
-        // eliminating form wrapper tag also does this
-        event.preventDefault();
-
-        // This line grabs the input from the textbox
-        let itemVal = $("#item-input").val().trim();
-        firebaseSaveItem(itemVal);
-    });
-
-    $("#delete-item").on("click", function () {
-        // make it so it wont refresh the page when form submits
-        // eliminating form wrapper tag also does this
-        event.preventDefault();
-
-        // This line grabs the input from the textbox
-        let itemVal = $("#item-input").val().trim();
-        firebaseDeleteItem(itemVal);
-    });
-
-}); // document.ready
-
 // Make sure authenticated
-firebase.auth().onAuthStateChanged(user => {
+authCheck("index.html", (user) => {
     if (user) {
-        // get the user ID from the firebase auth -- this should connect to our SQL User DB
         userId = user.uid;
         // Get user info from mySQLDB
         // MAIN PROCESS + INITIAL CODE
         // --------------------------------------------------------------------------------
         $(document).ready(function () {
+            // Show Logoff button if logged in
+            $(".loggedIn").removeClass('hide');
+            $(".notLoggedIn").addClass('hide');
 
             $("#add-item").on("click", function () {
                 // make it so it wont refresh the page when form submits
@@ -130,7 +95,5 @@ firebase.auth().onAuthStateChanged(user => {
             });
 
         }); // document.ready
-    } else {
-        window.location.replace("login.html");
     }
 });
