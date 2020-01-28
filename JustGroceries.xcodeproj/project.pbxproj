@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8EE4D44B9CC686540A14B97A /* libPods-JustGroceries.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A3AF04833DC4A23603BEA3 /* libPods-JustGroceries.a */; };
+		AB9A78FE9ACE907C58AE3A2D /* libPods-JustGroceriesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1722EF7DFCDCA9EC94C98E /* libPods-JustGroceriesTests.a */; };
 		DA02E51021D68328002ADF22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA02E50F21D68328002ADF22 /* LaunchScreen.storyboard */; };
 		DA02E51421D693E0002ADF22 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DA02E51321D693E0002ADF22 /* README.md */; };
 		DA6882B721D67C4A004955AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6882B621D67C4A004955AD /* AppDelegate.swift */; };
@@ -43,6 +44,8 @@
 		09428A074E541D028D84D030 /* Pods-JustGroceries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGroceries.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JustGroceries/Pods-JustGroceries.debug.xcconfig"; sourceTree = "<group>"; };
 		34D5782343AAC985E89702A4 /* Pods-JustGroceries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGroceries.release.xcconfig"; path = "Pods/Target Support Files/Pods-JustGroceries/Pods-JustGroceries.release.xcconfig"; sourceTree = "<group>"; };
 		53A3AF04833DC4A23603BEA3 /* libPods-JustGroceries.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JustGroceries.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55FDD2964017814E8FA6779B /* Pods-JustGroceriesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGroceriesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JustGroceriesTests/Pods-JustGroceriesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C8C4D04EFE1D77869BDECD5D /* Pods-JustGroceriesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGroceriesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JustGroceriesTests/Pods-JustGroceriesTests.release.xcconfig"; sourceTree = "<group>"; };
 		DA02E50F21D68328002ADF22 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA02E51321D693E0002ADF22 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		DA6882B321D67C4A004955AD /* JustGroceries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustGroceries.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +70,7 @@
 		DAC64FB921D69E3A00BA336A /* IMG_0769.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0769.jpg; sourceTree = "<group>"; };
 		DAC64FBA21D69E3A00BA336A /* IMG_0768.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0768.jpg; sourceTree = "<group>"; };
 		DAC64FC121D6C4BC00BA336A /* JustGroceries.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JustGroceries.entitlements; sourceTree = "<group>"; };
+		FC1722EF7DFCDCA9EC94C98E /* libPods-JustGroceriesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JustGroceriesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB9A78FE9ACE907C58AE3A2D /* libPods-JustGroceriesTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +98,8 @@
 			children = (
 				09428A074E541D028D84D030 /* Pods-JustGroceries.debug.xcconfig */,
 				34D5782343AAC985E89702A4 /* Pods-JustGroceries.release.xcconfig */,
+				55FDD2964017814E8FA6779B /* Pods-JustGroceriesTests.debug.xcconfig */,
+				C8C4D04EFE1D77869BDECD5D /* Pods-JustGroceriesTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -101,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				53A3AF04833DC4A23603BEA3 /* libPods-JustGroceries.a */,
+				FC1722EF7DFCDCA9EC94C98E /* libPods-JustGroceriesTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -226,6 +234,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA6882D321D67C4C004955AD /* Build configuration list for PBXNativeTarget "JustGroceriesTests" */;
 			buildPhases = (
+				AFD2548A551930EC5BC32D2C /* [CP] Check Pods Manifest.lock */,
 				DA6882C321D67C4C004955AD /* Sources */,
 				DA6882C421D67C4C004955AD /* Frameworks */,
 				DA6882C521D67C4C004955AD /* Resources */,
@@ -252,6 +261,7 @@
 				TargetAttributes = {
 					DA6882B221D67C4A004955AD = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1130;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 1;
@@ -260,6 +270,7 @@
 					};
 					DA6882C621D67C4C004955AD = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1130;
 						TestTargetID = DA6882B221D67C4A004955AD;
 					};
 				};
@@ -329,6 +340,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-JustGroceries-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AFD2548A551930EC5BC32D2C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JustGroceriesTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -501,7 +534,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.linck.JustGroceries;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -521,13 +554,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.linck.JustGroceries;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		DA6882D421D67C4C004955AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55FDD2964017814E8FA6779B /* Pods-JustGroceriesTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -541,7 +575,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.linck.JustGroceriesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JustGroceries.app/JustGroceries";
 			};
@@ -549,6 +583,7 @@
 		};
 		DA6882D521D67C4C004955AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8C4D04EFE1D77869BDECD5D /* Pods-JustGroceriesTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -562,7 +597,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = net.linck.JustGroceriesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JustGroceries.app/JustGroceries";
 			};

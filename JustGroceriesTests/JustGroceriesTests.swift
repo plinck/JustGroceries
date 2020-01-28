@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import JustGroceries
+@testable import Firebase
 
 class JustGroceriesTests: XCTestCase {
 

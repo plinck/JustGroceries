@@ -72,7 +72,7 @@ DEPENDENCIES:
   - Firebase/Database
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -100,6 +100,6 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
 
-PODFILE CHECKSUM: 1a8cba0e3eafa59dfa84bcf5ed7e5e6a74003440
+PODFILE CHECKSUM: 0f0d73da3671985f4011e4c51e1b6b332d02831c
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4
