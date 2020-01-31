@@ -27,6 +27,9 @@ class GroceryListTableViewController: UITableViewController {
     // In short, this property allows for saving and syncing of data to the given location.
     let groceryItemsRef = Database.database().reference(withPath: "grocery-items")
     
+    // Firestore
+    let db = Firestore.firestore()
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -73,6 +76,28 @@ class GroceryListTableViewController: UITableViewController {
             self.tableView.reloadData()
         })
         
+        // Get items from Firestore
+        let itemRef = db.collection("grocery-items")
+        itemRef.order(by: "completed")
+        itemRef.getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting grocery-items: \(err)")
+            } else {
+                // Store the latest version of the data in closure
+                var newItems: [GroceryItem] = []
+
+                for document in querySnapshot!.documents {
+                    let groceryItem = GroceryItem(name: document.data()["name"] as! String,
+                                                  addedByUser: document.data()["addedByUser"] as! String,
+                                                  completed: document.data()["completed"] as! Bool,
+                                                  docId: document.documentID)
+                    newItems.append(groceryItem)
+                    
+                    print("\(document.documentID) => \(document.data())")
+                }
+            }
+        }
+
         // Observer for online users count
         usersRef.observe(.value, with: { snapshot in
             if snapshot.exists() {
@@ -199,7 +224,22 @@ class GroceryListTableViewController: UITableViewController {
             
             // set value for the key, remember its just JSON
             groceryItemRef.setValue(groceryItem.toAnyObject())
-        }
+                                        
+            // Add a new document to firestore with a generated ID
+            var ref: DocumentReference? = nil
+            ref = self.db.collection("grocery-items").addDocument(data: [
+                "addedByUser": groceryItem.addedByUser,
+                "completed": groceryItem.completed,
+                "grocery-list": "publix",
+                "name": groceryItem.name
+            ]) { err in
+                if let err = err {
+                    print("Error adding document: \(err)")
+                } else {
+                    print("Document added with ID: \(ref!.documentID)")
+                }
+            }
+    }
         
         let cancelAction = UIAlertAction(title: "Cancel",
                                          style: .cancel)

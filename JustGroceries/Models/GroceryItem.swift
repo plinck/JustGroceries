@@ -16,14 +16,22 @@ struct GroceryItem {
   let addedByUser: String
   var completed: Bool
   
-  init(name: String, addedByUser: String, completed: Bool, key: String = "") {
-    self.ref = nil
-    self.key = key
-    self.name = name
-    self.addedByUser = addedByUser
-    self.completed = completed
-  }
-  
+    init(name: String, addedByUser: String, completed: Bool, key: String = "") {
+        self.ref = nil
+        self.key = key
+        self.name = name
+        self.addedByUser = addedByUser
+        self.completed = completed
+    }
+    
+    init(name: String, addedByUser: String, completed: Bool, docId: String) {
+        self.ref = nil
+        self.key = docId
+        self.name = name
+        self.addedByUser = addedByUser
+        self.completed = completed
+    }
+
   init?(snapshot: DataSnapshot) {
     guard
       let value = snapshot.value as? [String: AnyObject],
