@@ -6,6 +6,7 @@
 //
 
 // FIXME: - FIX the fact that things are not added to tableview wgen aded to firestiore
+// TODO: - Screen is BLACK on iOS device vs simulator
 import UIKit
 import Firebase
 
