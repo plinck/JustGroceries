@@ -5,6 +5,7 @@
 //  Copyright © 2018 Paul Linck. All rights reserved.
 //
 
+// FIXME: - FIX the fact that things are not added to tableview wgen aded to firestiore
 import UIKit
 import Firebase
 
@@ -18,18 +19,11 @@ class GroceryListTableViewController: UITableViewController {
     var user: User!
     var userCountBarButtonItem: UIBarButtonItem!
     
-    // Firebase reference to all online users
-    let usersRef = Database.database().reference(withPath: "online")
-    
-    // Establish a connection to Firebase database using the provided path.
-    // These Firebase properties are referred to as references because
-    // they refer to a location in your Firebase database.
-    // In short, this property allows for saving and syncing of data to the given location.
-    let groceryItemsRef = Database.database().reference(withPath: "grocery-items")
-    
     // Firestore
     let db = Firestore.firestore()
-    
+    let groceryItemReference = Firestore.firestore().collection("grocery-items")
+    let userReference = Firestore.firestore().collection("users")
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -49,9 +43,8 @@ class GroceryListTableViewController: UITableViewController {
         navigationItem.leftBarButtonItem = userCountBarButtonItem
         
         // Get items from Firestore
-        let itemRef = db.collection("grocery-items")
-        itemRef.order(by: "completed")
-        itemRef.getDocuments() { (querySnapshot, err) in
+        self.groceryItemReference.order(by: "completed")
+        self.groceryItemReference.getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting grocery-items: \(err)")
             } else {
@@ -92,22 +85,37 @@ class GroceryListTableViewController: UITableViewController {
         // Attach an authentication observer to the Firebase auth object,
         // which in turn assigns the user property when a user successfully signs in.
         Auth.auth().addStateDidChangeListener { auth, user in
-            guard let user = user else { return }
+            guard let user = user else {
+                // Delete user from firestore if logout
+                // not sure if this does what I want but firestore does not
+                // support  detecting "presence." - you need firebase realtime for that
+                
+                // Unfortuantelt this only works if someone specifically logs out
+                // it does not work if they just close the app
+                
+                self.userReference.document(self.user.uid).delete() { err in
+                    if let err = err {
+                        print("Error deleting user: \(err)")
+                    } else {
+                        print("User doc successfully deleted!")
+                    }
+                }
+                return
+            }
             self.user = User(authData: user)
-            
-            // Create a child reference using a user’s uid,
-            // which is generated when Firebase creates an account.
-            let currentUserRef = self.usersRef.child(self.user.uid)
-            
-            // Use this reference to save the current user’s email.
-            currentUserRef.setValue(self.user.email)
-            
-            // Call onDisconnectRemoveValue() on currentUserRef.
-            // This removes the value at the reference’s location after the connection to Firebase closes,
-            // e.g. when a user quits app. This is perfect for monitoring users who have gone offline.
-            currentUserRef.onDisconnectRemoveValue()
-        } // closure
-    }// viewDidLoad
+                        
+            // Add a new user document in collection "users"
+            self.userReference.document(self.user.uid).setData([
+                "email": self.user.email
+            ]) { err in
+                if let err = err {
+                    print("Error writing user: \(err)")
+                } else {
+                    print("User doc successfully written!")
+                }
+            }
+        } // Auth.auth() closure
+    }// viewDidLoad func
     
     // MARK: UITableView Delegate methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -138,14 +146,29 @@ class GroceryListTableViewController: UITableViewController {
     // After selecting delete from tableView, delete from DB
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
-        // Delete from firebase note indexPath.row is grocery item to delete
-        // Firebase follows a unidirectional data flow model, so the listener in viewDidLoad()
-        // notifies the app of the latest value of the grocery list.
+        // Delete from firebase. note indexPath.row is grocery item to delete
+        // MARK: - Markme  is this getting deleted from firestore?  I dont get ut.  I
+        // FIXME: - Fixme How is this getting deleted from firestore?  I dont get ut.  I
+        // TODO: - ToDo How is this getting deleted from firestore?  I dont get ut.  I
+        // dont see delete anywhere in my code
+        // Firebase follows a unidirectional data flow model, so the listener in
+        // viewDidLoad() notifies the app of the latest value of the grocery list.
         // A removal of an item triggers a value change.
+        
+        // TODO: - Doc is now getting deleted from firestore but NOT from tableView
         if editingStyle == .delete {
             print("items[indexPath.row]:\(items[indexPath.row])")
             let groceryItem = items[indexPath.row]
-            groceryItem.ref?.removeValue()
+
+            self.groceryItemReference.document(groceryItem.key).delete() { err in
+                 if let err = err {
+                     print("Error deleting user: \(err)")
+                 } else {
+                    self.items.remove(at: indexPath.row)
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                    print("User doc successfully deleted!")
+                 }
+             }
         }
     }
     
@@ -201,12 +224,6 @@ class GroceryListTableViewController: UITableViewController {
             let groceryItem = GroceryItem(name: text,
                                           addedByUser: self.user.email,
                                           completed: false)
-            // make sure key is lower case so it always matches
-            let groceryItemRef = self.groceryItemsRef.child(text.lowercased())
-            
-            // set value for the key, remember its just JSON
-            groceryItemRef.setValue(groceryItem.toAnyObject())
-                                        
             // Add a new document to firestore with a generated ID
             var ref: DocumentReference? = nil
             ref = self.db.collection("grocery-items").addDocument(data: [
@@ -216,9 +233,9 @@ class GroceryListTableViewController: UITableViewController {
                 "name": groceryItem.name
             ]) { err in
                 if let err = err {
-                    print("Error adding document: \(err)")
+                    print("Error adding grocery item: \(err)")
                 } else {
-                    print("Document added with ID: \(ref!.documentID)")
+                    print("Grocery Item added with ID: \(ref!.documentID)")
                 }
             }
     }
