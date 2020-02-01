@@ -25,6 +25,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // to Firebase database once a connection is made. Pretty nice.
         Database.database().isPersistenceEnabled = true
         
+        // Firestore - DELETE ABOVE firebase stuff after conversion is doe
+        // This code is to make sure firestore uses timestamps for dates
+        let db = Firestore.firestore()
+        let settings = db.settings
+        settings.areTimestampsInSnapshotsEnabled = true
+        db.settings = settings
+        
+        // With this change, timestamps stored in Cloud Firestore will be read back as
+        // Firebase Timestamp objects instead of as system Date objects. So you will also
+        // need to update code expecting a Date to instead expect a Timestamp. For example:
+        // old:
+        // let date: Date = documentSnapshot.get("created_at") as! Date
+        // new:
+        // let timestamp: Timestamp = documentSnapshot.get("created_at") as! Timestamp
+        // let date: Date = timestamp.dateValue()
+        
         return true
     }
 

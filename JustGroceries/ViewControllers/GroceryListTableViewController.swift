@@ -48,34 +48,6 @@ class GroceryListTableViewController: UITableViewController {
         userCountBarButtonItem.tintColor = UIColor.white
         navigationItem.leftBarButtonItem = userCountBarButtonItem
         
-        // You retrieve data in Firebase by attaching an asynchronous listener
-        // to a reference using observe(_:with:).
-        // In this case, we want to sort the items by completion status so we use
-        // the firebase queryOrdered(:byChild:) for the "completed" key
-        // NON-Sorted way ==> groceryItemsRef.observe(.value, with: { snapshot in
-        groceryItemsRef.queryOrdered(byChild: "completed").observe(.value, with: { snapshot in
-            // Store the latest version of the data in a local variable inside the listener’s closure.
-            var newItems: [GroceryItem] = []
-            
-            // The snapshot contains the entire list of grocery items, not just the updates.
-            // Using children, you loop through the grocery items.
-            for child in snapshot.children {
-                // The GroceryItem struct has an initializer that populates its properties using a DataSnapshot.
-                // A snapshot’s value is of type AnyObject, and can be a dictionary, array, number, or string.
-                // After creating an instance of GroceryItem,
-                // it’s added it to the array that contains the latest version of the data.
-                if let snapshot = child as? DataSnapshot,
-                    let groceryItem = GroceryItem(snapshot: snapshot) {
-                    newItems.append(groceryItem)
-                }
-            }
-            
-            // Replace items with the latest version of the data,
-            // then reload the table view so it displays the latest version
-            self.items = newItems
-            self.tableView.reloadData()
-        })
-        
         // Get items from Firestore
         let itemRef = db.collection("grocery-items")
         itemRef.order(by: "completed")
@@ -95,17 +67,27 @@ class GroceryListTableViewController: UITableViewController {
                     
                     print("\(document.documentID) => \(document.data())")
                 }
+                // Replace items with the latest version of the data,
+                // then reload the table view so it displays the latest version
+                self.items = newItems
+                self.tableView.reloadData()
             }
         }
-
-        // Observer for online users count
-        usersRef.observe(.value, with: { snapshot in
-            if snapshot.exists() {
-                self.userCountBarButtonItem?.title = "Users:\(snapshot.childrenCount.description)"
-            } else {
-                self.userCountBarButtonItem?.title = "Users:0"
+        
+        // Firestore Observer for online users count
+        // This is terribly inefficient or mow and not even importtant so I will
+        // eventually delete
+        db.collection("users").addSnapshotListener { querySnapshot, error in
+            guard let documents = querySnapshot?.documents else {
+                print("Error fetching users: \(error!)")
+                return
             }
-        })
+            var count = 0;
+            for _ in documents {
+                count += 1
+            }
+            self.userCountBarButtonItem?.title = "Users:\(count)"
+        }
         
         // Attach an authentication observer to the Firebase auth object,
         // which in turn assigns the user property when a user successfully signs in.
