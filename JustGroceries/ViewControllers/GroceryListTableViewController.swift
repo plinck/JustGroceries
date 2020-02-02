@@ -173,6 +173,7 @@ class GroceryListTableViewController: UITableViewController {
         }
     }
     
+    // select row to check it
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Find the cell the user tapped
         guard let cell = tableView.cellForRow(at: indexPath) else { return }
@@ -189,9 +190,22 @@ class GroceryListTableViewController: UITableViewController {
         // Use updateChildValues(_:), passing a dictionary, to update Firebase.
         // This method is different than setValue(_:) because it only applies updates,
         // whereas setValue(_:) is destructive and replaces the entire value at that reference
-        groceryItem.ref?.updateChildValues([
+//        groceryItem.ref?.updateChildValues([
+//            "completed": toggledCompletion
+//            ])
+        
+        self.items[indexPath.row].completed = toggledCompletion
+
+        // Add a new user document in collection "users"
+        self.groceryItemReference.document(groceryItem.key).setData([
             "completed": toggledCompletion
-            ])
+        ]) { err in
+            if let err = err {
+                print("Error writing completed grocery item: \(err)")
+            } else {
+                print("completed grocery item doc successfully written!")
+            }
+        }
     }
     
     // Change the visual properties of the cell to indicate whether you bought it or not
@@ -207,8 +221,7 @@ class GroceryListTableViewController: UITableViewController {
         }
     }
     
-    // MARK: Add Item
-    
+    // MARK: Add Item    
     @IBAction func addButtonDidTouch(_ sender: AnyObject) {
         let alert = UIAlertController(title: "Grocery Item",
                                       message: "Add an Item",
