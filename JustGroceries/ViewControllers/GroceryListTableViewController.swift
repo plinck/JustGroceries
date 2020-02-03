@@ -178,7 +178,6 @@ class GroceryListTableViewController: UITableViewController {
         // viewDidLoad() notifies the app of the latest value of the grocery list.
         // A removal of an item triggers a value change.
         
-        // TODO: - Doc is now getting deleted from firestore but NOT from tableView
         if editingStyle == .delete {
             print("items[indexPath.row]:\(items[indexPath.row])")
             let groceryItem = items[indexPath.row]
@@ -187,8 +186,6 @@ class GroceryListTableViewController: UITableViewController {
                  if let err = err {
                      print("Error deleting user: \(err)")
                  } else {
-                    self.items.remove(at: indexPath.row)
-                    tableView.deleteRows(at: [indexPath], with: .fade)
                     print("User doc successfully deleted!")
                  }
              }
@@ -208,16 +205,7 @@ class GroceryListTableViewController: UITableViewController {
         
         // Call toggleCellCheckbox(_:isCompleted:) to update the visual properties of the cell
         toggleCellCheckbox(cell, isCompleted: toggledCompletion)
-        
-        // Use updateChildValues(_:), passing a dictionary, to update Firebase.
-        // This method is different than setValue(_:) because it only applies updates,
-        // whereas setValue(_:) is destructive and replaces the entire value at that reference
-//        groceryItem.ref?.updateChildValues([
-//            "completed": toggledCompletion
-//            ])
-        
-        self.items[indexPath.row].completed = toggledCompletion
-
+                
         // Add a new user document in collection "users"
         self.groceryItemReference.document(groceryItem.key).setData([
             "completed": toggledCompletion
@@ -262,7 +250,7 @@ class GroceryListTableViewController: UITableViewController {
                                           completed: false)
             // Add a new document to firestore with a generated ID
             var ref: DocumentReference? = nil
-            ref = self.db.collection("grocery-items").addDocument(data: [
+            ref = self.groceryItemReference.addDocument(data: [
                 "addedByUser": groceryItem.addedByUser,
                 "completed": groceryItem.completed,
                 "grocery-list": "publix",
@@ -274,7 +262,7 @@ class GroceryListTableViewController: UITableViewController {
                     print("Grocery Item added with ID: \(ref!.documentID)")
                 }
             }
-    }
+        }
         
         let cancelAction = UIAlertAction(title: "Cancel",
                                          style: .cancel)
