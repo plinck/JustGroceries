@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let db = Firestore.firestore()
         let settings = db.settings
         settings.areTimestampsInSnapshotsEnabled = true
-        settings.isPersistenceEnabled = false
+        //settings.isPersistenceEnabled = false
         db.settings = settings
 
         // With this change, timestamps stored in Cloud Firestore will be read back as
