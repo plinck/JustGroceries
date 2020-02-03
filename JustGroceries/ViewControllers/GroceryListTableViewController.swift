@@ -19,7 +19,9 @@ class GroceryListTableViewController: UITableViewController {
     var items: [GroceryItem] = []
     var user: User!
     var userCountBarButtonItem: UIBarButtonItem!
-    
+    var groceryListener: ListenerRegistration!       // for listeners
+    var userListener: ListenerRegistration!
+
     // Firestore
     let db = Firestore.firestore()
     let groceryItemReference = Firestore.firestore().collection("grocery-items")
@@ -30,7 +32,6 @@ class GroceryListTableViewController: UITableViewController {
     }
     
     // MARK: UIViewController Lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,32 +43,7 @@ class GroceryListTableViewController: UITableViewController {
                                                  action: #selector(userCountButtonDidTouch))
         userCountBarButtonItem.tintColor = UIColor.white
         navigationItem.leftBarButtonItem = userCountBarButtonItem
-        
-        // Get items from Firestore
-        self.groceryItemReference.order(by: "completed")
-        self.groceryItemReference.getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting grocery-items: \(err)")
-            } else {
-                // Store the latest version of the data in closure
-                var newItems: [GroceryItem] = []
-
-                for document in querySnapshot!.documents {
-                    let groceryItem = GroceryItem(name: document.data()["name"] as! String,
-                                                  addedByUser: document.data()["addedByUser"] as! String,
-                                                  completed: document.data()["completed"] as! Bool,
-                                                  docId: document.documentID)
-                    newItems.append(groceryItem)
-                    
-                    print("\(document.documentID) => \(document.data())")
-                }
-                // Replace items with the latest version of the data,
-                // then reload the table view so it displays the latest version
-                self.items = newItems
-                self.tableView.reloadData()
-            }
-        }
-        
+                
         // Firestore Observer for online users count
         // This is terribly inefficient or mow and not even importtant so I will
         // eventually delete
@@ -117,6 +93,52 @@ class GroceryListTableViewController: UITableViewController {
             }
         } // Auth.auth() closure
     }// viewDidLoad func
+    
+    // Setup listeners in view did appear
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Firestore Observer for grocery items
+        self.groceryItemReference.order(by: "completed")
+        self.groceryListener = self.groceryItemReference.addSnapshotListener {querySnapshot, err in
+            guard let groceryDocs = querySnapshot?.documents else {
+                print("Error fetching grocery items from firestore: \(err!)")
+                return
+            }
+            // Store the latest version of the data in closure
+             var newItems: [GroceryItem] = []
+
+             for document in groceryDocs {
+                if document.exists {
+                    print("\(document.documentID) => \(document.data())")
+                    print("name => \(document.data()["name"] ?? "")")
+                    print("addedByUser => \(document.data()["addedByUser"] ?? "")")
+                    print("completed => \(document.data()["completed"] ?? "")")
+                    guard let name = document.data()["name"] as? String else {continue}
+                    guard let addedByUser = document.data()["addedByUser"] as? String else {continue}
+                    guard let completed = document.data()["completed"] as? Bool else {continue}
+                    let docId = document.documentID
+                    
+                    let groceryItem = GroceryItem(name: name,
+                                                   addedByUser: addedByUser,
+                                                   completed: completed,
+                                                   docId: docId)
+                    newItems.append(groceryItem)
+                }
+             }
+             // Replace items with the latest version of the data,
+             // then reload the table view so it displays the latest version
+             self.items = newItems
+             self.tableView.reloadData()
+        }
+    }
+    
+    // remove listeners
+    override func viewDidDisappear(_ animated: Bool) {
+      super.viewDidDisappear(animated)
+      // Stop listening to changes
+      groceryListener.remove()
+    }
     
     // MARK: UITableView Delegate methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -199,7 +221,7 @@ class GroceryListTableViewController: UITableViewController {
         // Add a new user document in collection "users"
         self.groceryItemReference.document(groceryItem.key).setData([
             "completed": toggledCompletion
-        ]) { err in
+        ], merge: true) { err in
             if let err = err {
                 print("Error writing completed grocery item: \(err)")
             } else {
