@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a grocery list application that uses firebase to store and sync grocery list items.  I plan to grow it to be a full fledge application with iOS and Web versions.  Test deleting this sentence directly to master.
+This is a grocery list application that uses firebase to store and sync grocery list items.  I plan to grow it to be a full fledge application with iOS and Web versions.
 
 ## Screenshots
 
