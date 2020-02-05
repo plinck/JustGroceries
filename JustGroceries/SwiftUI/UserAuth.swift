@@ -49,13 +49,7 @@ class UserAuth {
       user, error in
       // Display erro if failed
       if let error = error, user == nil {
-        let alert = UIAlertController(title: "Sign In Failed",
-                                      message: error.localizedDescription,
-                                      preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        
-        self.present(alert, animated: true, completion: nil)
+        print("error logginh in: \(error)")
       }
     } // End trailing closure
   } // login

@@ -19,6 +19,9 @@ struct ContentView: View {
         .edgesIgnoringSafeArea(.all)
             
       VStack(alignment: .center, spacing: 8.0) {
+        
+        
+        
         Text("Just Groceries")
           .font(.title)
           .foregroundColor(.white)
