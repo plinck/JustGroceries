@@ -9,6 +9,7 @@
 
 import UIKit
 import Firebase
+import SwiftUI
 
 class LoginViewController: UIViewController {
     
@@ -73,6 +74,13 @@ class LoginViewController: UIViewController {
         } // End trailing closure
     } // loginDidTouch(sender:)
     
+    @IBAction func LoginALT(_ sender: UIButton) {
+        print("touched LoginALT")
+        //  Mke a view controller out of swiftUI view usng host view contoller so I can invoke
+        let loginView = LoginView()
+        let loginViewHostController = UIHostingController(rootView: loginView)
+        self.present(loginViewHostController, animated:true, completion:nil)
+    }
     // Allow use to sign up for an account
     @IBAction func signUpDidTouch(_ sender: AnyObject) {
         

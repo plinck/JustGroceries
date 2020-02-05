@@ -1,5 +1,5 @@
 //
-//  LoginHostingController.swift
+//  LoginView.swift
 //  JustGroceries
 //
 //  Created by Paul Linck on 2/4/20.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct LoginView: View {
   @State private var emailAddress = ""
   @State private var password = ""
   
@@ -73,8 +73,8 @@ struct ContentView: View {
   }//view
 }
 
-struct ContentView_Preview: PreviewProvider {
+struct LoginView_Preview: PreviewProvider {
   static var previews: some View {
-    ContentView()
+    LoginView()
   }
 }
