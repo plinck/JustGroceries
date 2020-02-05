@@ -54,6 +54,8 @@ struct LoginView: View {
           .cornerRadius(10)
           
         }
+        Image("testimage")
+
         Spacer()
         Button(action: {
           print("Signup tapped!")
