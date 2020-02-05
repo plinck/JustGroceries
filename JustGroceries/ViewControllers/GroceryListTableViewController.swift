@@ -28,7 +28,6 @@ class GroceryListTableViewController: UITableViewController {
   // Firestore
   let db = Firestore.firestore()
   let groceryItemReference = Firestore.firestore().collection("grocery-items")
-  let userReference = Firestore.firestore().collection("users")
   
   override var preferredStatusBarStyle: UIStatusBarStyle {
     return .lightContent
