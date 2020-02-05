@@ -10,7 +10,7 @@
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <imageView key="view" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_0765.jpg" id="XME-4H-zI4">
+                    <imageView key="view" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_0767.jpg" id="fk1-kW-aLq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
@@ -21,6 +21,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="IMG_0765.jpg" width="295" height="640"/>
+        <image name="IMG_0767.jpg" width="295" height="640"/>
     </resources>
 </document>

@@ -79,7 +79,11 @@ class LoginViewController: UIViewController {
         //  Mke a view controller out of swiftUI view usng host view contoller so I can invoke
         let loginView = LoginView()
         let loginViewHostController = UIHostingController(rootView: loginView)
-        self.present(loginViewHostController, animated:true, completion:nil)
+        // self.present(loginViewHostController, animated:true, completion:nil)
+        
+        self.dismiss(animated: true, completion: {
+            self.present(loginViewHostController, animated: false, completion: nil)
+        })
     }
     // Allow use to sign up for an account
     @IBAction func signUpDidTouch(_ sender: AnyObject) {
