@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		23B76DD623E9EE2B003A4DDC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B76DD523E9EE2B003A4DDC /* SwiftUI.framework */; };
-		23B76DD823E9F187003A4DDC /* LoginHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B76DD723E9F187003A4DDC /* LoginHostingController.swift */; };
+		23B76DD823E9F187003A4DDC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B76DD723E9F187003A4DDC /* LoginView.swift */; };
 		23B76DDC23EA5842003A4DDC /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B76DDB23EA5842003A4DDC /* UserAuth.swift */; };
 		8EE4D44B9CC686540A14B97A /* libPods-JustGroceries.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A3AF04833DC4A23603BEA3 /* libPods-JustGroceries.a */; };
 		AB9A78FE9ACE907C58AE3A2D /* libPods-JustGroceriesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1722EF7DFCDCA9EC94C98E /* libPods-JustGroceriesTests.a */; };
@@ -46,7 +46,7 @@
 /* Begin PBXFileReference section */
 		09428A074E541D028D84D030 /* Pods-JustGroceries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGroceries.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JustGroceries/Pods-JustGroceries.debug.xcconfig"; sourceTree = "<group>"; };
 		23B76DD523E9EE2B003A4DDC /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		23B76DD723E9F187003A4DDC /* LoginHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHostingController.swift; sourceTree = "<group>"; };
+		23B76DD723E9F187003A4DDC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		23B76DDB23EA5842003A4DDC /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
 		34D5782343AAC985E89702A4 /* Pods-JustGroceries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGroceries.release.xcconfig"; path = "Pods/Target Support Files/Pods-JustGroceries/Pods-JustGroceries.release.xcconfig"; sourceTree = "<group>"; };
 		53A3AF04833DC4A23603BEA3 /* libPods-JustGroceries.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JustGroceries.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,7 +103,7 @@
 		23B76DD423E9E821003A4DDC /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				23B76DD723E9F187003A4DDC /* LoginHostingController.swift */,
+				23B76DD723E9F187003A4DDC /* LoginView.swift */,
 				23B76DDB23EA5842003A4DDC /* UserAuth.swift */,
 			);
 			path = SwiftUI;
@@ -433,7 +433,7 @@
 				DAAA9AE421D681DA00487F07 /* OnlineUsersTableViewController.swift in Sources */,
 				23B76DDC23EA5842003A4DDC /* UserAuth.swift in Sources */,
 				DA6882B721D67C4A004955AD /* AppDelegate.swift in Sources */,
-				23B76DD823E9F187003A4DDC /* LoginHostingController.swift in Sources */,
+				23B76DD823E9F187003A4DDC /* LoginView.swift in Sources */,
 				DAAA9AE621D681DA00487F07 /* GroceryListTableViewController.swift in Sources */,
 				DAAA9AE021D681BB00487F07 /* GroceryItem.swift in Sources */,
 				DAAA9ADF21D681BB00487F07 /* User.swift in Sources */,
