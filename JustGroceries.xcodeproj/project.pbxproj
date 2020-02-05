@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		236EC8E723EB1F5900607093 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236EC8E623EB1F5900607093 /* LaunchView.swift */; };
+		236EC8EB23EB298600607093 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236EC8EA23EB298600607093 /* LaunchScreen.storyboard */; };
 		23B76DD623E9EE2B003A4DDC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B76DD523E9EE2B003A4DDC /* SwiftUI.framework */; };
 		23B76DD823E9F187003A4DDC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B76DD723E9F187003A4DDC /* LoginView.swift */; };
 		23B76DDC23EA5842003A4DDC /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B76DDB23EA5842003A4DDC /* UserAuth.swift */; };
 		8EE4D44B9CC686540A14B97A /* libPods-JustGroceries.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A3AF04833DC4A23603BEA3 /* libPods-JustGroceries.a */; };
 		AB9A78FE9ACE907C58AE3A2D /* libPods-JustGroceriesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1722EF7DFCDCA9EC94C98E /* libPods-JustGroceriesTests.a */; };
-		DA02E51021D68328002ADF22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA02E50F21D68328002ADF22 /* LaunchScreen.storyboard */; };
 		DA02E51421D693E0002ADF22 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DA02E51321D693E0002ADF22 /* README.md */; };
 		DA6882B721D67C4A004955AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6882B621D67C4A004955AD /* AppDelegate.swift */; };
 		DA6882BE21D67C4C004955AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6882BD21D67C4C004955AD /* Assets.xcassets */; };
@@ -45,6 +46,8 @@
 
 /* Begin PBXFileReference section */
 		09428A074E541D028D84D030 /* Pods-JustGroceries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGroceries.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JustGroceries/Pods-JustGroceries.debug.xcconfig"; sourceTree = "<group>"; };
+		236EC8E623EB1F5900607093 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		236EC8EA23EB298600607093 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		23B76DD523E9EE2B003A4DDC /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		23B76DD723E9F187003A4DDC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		23B76DDB23EA5842003A4DDC /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
@@ -52,7 +55,6 @@
 		53A3AF04833DC4A23603BEA3 /* libPods-JustGroceries.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JustGroceries.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		55FDD2964017814E8FA6779B /* Pods-JustGroceriesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGroceriesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JustGroceriesTests/Pods-JustGroceriesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C8C4D04EFE1D77869BDECD5D /* Pods-JustGroceriesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGroceriesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JustGroceriesTests/Pods-JustGroceriesTests.release.xcconfig"; sourceTree = "<group>"; };
-		DA02E50F21D68328002ADF22 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA02E51321D693E0002ADF22 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		DA6882B321D67C4A004955AD /* JustGroceries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustGroceries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA6882B621D67C4A004955AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			children = (
 				23B76DD723E9F187003A4DDC /* LoginView.swift */,
 				23B76DDB23EA5842003A4DDC /* UserAuth.swift */,
+				236EC8E623EB1F5900607093 /* LaunchView.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -191,8 +194,8 @@
 		DAAA9AD821D67F4F00487F07 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DA02E50F21D68328002ADF22 /* LaunchScreen.storyboard */,
 				DAC64FB021D6968000BA336A /* Main.storyboard */,
+				236EC8EA23EB298600607093 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				DAC64FBF21D69E3A00BA336A /* IMG_0769.jpg in Resources */,
 				DAC64FBE21D69E3A00BA336A /* IMG_0770.jpg in Resources */,
 				DA02E51421D693E0002ADF22 /* README.md in Resources */,
+				236EC8EB23EB298600607093 /* LaunchScreen.storyboard in Resources */,
 				DAC64FC021D69E3A00BA336A /* IMG_0768.jpg in Resources */,
 				DAAA9ADC21D6819600487F07 /* Sample.json in Resources */,
 				DAC64FBC21D69E3A00BA336A /* IMG_0767.jpg in Resources */,
@@ -330,7 +334,6 @@
 				DAC64FBB21D69E3A00BA336A /* IMG_0766.jpg in Resources */,
 				DAAA9AD621D67E7600487F07 /* GoogleService-Info.plist in Resources */,
 				DA6882BE21D67C4C004955AD /* Assets.xcassets in Resources */,
-				DA02E51021D68328002ADF22 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +439,7 @@
 				23B76DD823E9F187003A4DDC /* LoginView.swift in Sources */,
 				DAAA9AE621D681DA00487F07 /* GroceryListTableViewController.swift in Sources */,
 				DAAA9AE021D681BB00487F07 /* GroceryItem.swift in Sources */,
+				236EC8E723EB1F5900607093 /* LaunchView.swift in Sources */,
 				DAAA9ADF21D681BB00487F07 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
