@@ -9,24 +9,19 @@
 import SwiftUI
 
 struct LaunchView: View {
-    @State private var image: Image?
-    
-    var body: some View {
-        VStack {
-            image?
-                .resizable()
-                .scaledToFit()
-        }
-        .onAppear(perform: loadImage)
+  @State private var image: Image?
+  
+  var body: some View {
+    VStack {
+      Image("launchimage")
+        .resizable()
+        .scaledToFit()
     }
-    
-    func loadImage() {
-        image = Image("launchimage")
-    }
+  }
 }
 
 struct LaunchView_Previews: PreviewProvider {
-    static var previews: some View {
-        LaunchView()
-    }
+  static var previews: some View {
+    LaunchView()
+  }
 }
