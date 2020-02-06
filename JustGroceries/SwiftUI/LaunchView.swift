@@ -13,15 +13,18 @@ struct LaunchView: View {
   
   var body: some View {
     VStack {
-      Image("launchimage")
+      Image("LaunchViewImage")
         .resizable()
-        .scaledToFit()
+        .scaledToFill()
+        .edgesIgnoringSafeArea(.all)
     }
   }
 }
 
+#if DEBUG
 struct LaunchView_Previews: PreviewProvider {
   static var previews: some View {
     LaunchView()
   }
 }
+#endif

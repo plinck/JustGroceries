@@ -54,6 +54,8 @@ struct LoginView: View {
           .cornerRadius(10)
           
         }
+        Image("testimage")
+
         Spacer()
         Button(action: {
           print("Signup tapped!")
@@ -73,8 +75,10 @@ struct LoginView: View {
   }//view
 }
 
+#if DEBUG
 struct LoginView_Preview: PreviewProvider {
   static var previews: some View {
     LoginView()
   }
 }
+#endif
