@@ -13,6 +13,7 @@
 		2379C93423EC72A50094D6A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2379C93323EC72A50094D6A8 /* Assets.xcassets */; };
 		2379C93723EC72A50094D6A8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2379C93623EC72A50094D6A8 /* Preview Assets.xcassets */; };
 		2379C93A23EC72A50094D6A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2379C93823EC72A50094D6A8 /* LaunchScreen.storyboard */; };
+		23DA193923EC7C0A0053BB9C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 23DA193823EC7C0A0053BB9C /* GoogleService-Info.plist */; };
 		9984A68AEA2E70A5E9F8EFC9 /* libPods-JustGroceries.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEED604202FC5393B0254BD /* libPods-JustGroceries.a */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		2379C93623EC72A50094D6A8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2379C93923EC72A50094D6A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2379C93B23EC72A50094D6A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23DA193823EC7C0A0053BB9C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4F9107873AED9E61EC5A0076 /* Pods-JustGroceries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGroceries.release.xcconfig"; path = "Target Support Files/Pods-JustGroceries/Pods-JustGroceries.release.xcconfig"; sourceTree = "<group>"; };
 		ACEED604202FC5393B0254BD /* libPods-JustGroceries.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JustGroceries.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB96408318900099C54B052D /* Pods-JustGroceries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGroceries.debug.xcconfig"; path = "Target Support Files/Pods-JustGroceries/Pods-JustGroceries.debug.xcconfig"; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 		2379C92C23EC72A40094D6A8 /* JustGroceries */ = {
 			isa = PBXGroup;
 			children = (
+				23DA193823EC7C0A0053BB9C /* GoogleService-Info.plist */,
 				2379C92D23EC72A40094D6A8 /* AppDelegate.swift */,
 				2379C92F23EC72A40094D6A8 /* SceneDelegate.swift */,
 				2379C93123EC72A40094D6A8 /* ContentView.swift */,
@@ -160,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2379C93A23EC72A50094D6A8 /* LaunchScreen.storyboard in Resources */,
+				23DA193923EC7C0A0053BB9C /* GoogleService-Info.plist in Resources */,
 				2379C93723EC72A50094D6A8 /* Preview Assets.xcassets in Resources */,
 				2379C93423EC72A50094D6A8 /* Assets.xcassets in Resources */,
 			);
