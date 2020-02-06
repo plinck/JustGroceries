@@ -16,15 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var window: UIWindow?
   
-  
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    // In iOS 13, it is handled by scene delegate
     if #available(iOS 13.0, *) { } else {
       self.window = UIWindow(frame: UIScreen.main.bounds)
       
       let LoginViewController = UIHostingController(rootView: LoginView())
-      let mainNavigationController = UINavigationController(rootViewController: LoginViewController)
-      self.window!.rootViewController = mainNavigationController
+      self.window!.rootViewController = LoginViewController
       self.window!.makeKeyAndVisible()
     }
     

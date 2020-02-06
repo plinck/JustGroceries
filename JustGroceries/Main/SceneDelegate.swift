@@ -15,13 +15,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     guard let _ = (scene as? UIWindowScene) else { return }
+    
+    // TODO: - Session
+    // If you had a .environtmentObject attached to LoginView() originally
+    // don't forget to add that onto the ContentView() in the above code.
     if let windowScene = scene as? UIWindowScene {
       self.window = UIWindow(windowScene: windowScene)
       
       let LoginViewController = UIHostingController(rootView: LoginView())
       
-      let mainNavigationController = UINavigationController(rootViewController: LoginViewController)
-      self.window!.rootViewController = mainNavigationController
+      self.window!.rootViewController = LoginViewController
       self.window!.makeKeyAndVisible()
     }
   }
