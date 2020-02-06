@@ -75,8 +75,10 @@ struct LoginView: View {
   }//view
 }
 
+#if DEBUG
 struct LoginView_Preview: PreviewProvider {
   static var previews: some View {
     LoginView()
   }
 }
+#endif

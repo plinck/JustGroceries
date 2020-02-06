@@ -21,8 +21,10 @@ struct LaunchView: View {
   }
 }
 
+#if DEBUG
 struct LaunchView_Previews: PreviewProvider {
   static var previews: some View {
     LaunchView()
   }
 }
+#endif
