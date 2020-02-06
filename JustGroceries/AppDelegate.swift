@@ -12,18 +12,20 @@ import SwiftUI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+  var window: UIWindow?
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
         // In iOS 13, it is handled by scene delegate
     if #available(iOS 13.0, *) { } else {
       self.window = UIWindow(frame: UIScreen.main.bounds)
-      
-      let LoginViewController = UIHostingController(rootView: LoginView())
-      self.window!.rootViewController = LoginViewController
+      // Create the SwiftUI view that provides the window contents.
+      let contentView = ContentView()
+
+      self.window!.rootViewController = UIHostingController(rootView: contentView)
+
       self.window!.makeKeyAndVisible()
     }
-    
     
     // Initialize firebase
     FirebaseApp.configure()
@@ -36,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // This code is to make sure firestore uses timestamps for dates
     let db = Firestore.firestore()
     let settings = db.settings
-    settings.areTimestampsInSnapshotsEnabled = true
+    // deprecated --- settings.areTimestampsInSnapshotsEnabled = true
     //settings.isPersistenceEnabled = false
     db.settings = settings
     
