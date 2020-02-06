@@ -7,252 +7,110 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		236EC8E723EB1F5900607093 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236EC8E623EB1F5900607093 /* LaunchView.swift */; };
-		236EC8EB23EB298600607093 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236EC8EA23EB298600607093 /* LaunchScreen.storyboard */; };
-		23B76DD623E9EE2B003A4DDC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23B76DD523E9EE2B003A4DDC /* SwiftUI.framework */; };
-		23B76DD823E9F187003A4DDC /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B76DD723E9F187003A4DDC /* LoginView.swift */; };
-		23B76DDC23EA5842003A4DDC /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23B76DDB23EA5842003A4DDC /* UserAuth.swift */; };
-		23DA3E0723EB6A7500B3C607 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23DA3E0623EB6A7500B3C607 /* SceneDelegate.swift */; };
-		8EE4D44B9CC686540A14B97A /* libPods-JustGroceries.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A3AF04833DC4A23603BEA3 /* libPods-JustGroceries.a */; };
-		AB9A78FE9ACE907C58AE3A2D /* libPods-JustGroceriesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FC1722EF7DFCDCA9EC94C98E /* libPods-JustGroceriesTests.a */; };
-		DA02E51421D693E0002ADF22 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DA02E51321D693E0002ADF22 /* README.md */; };
-		DA6882B721D67C4A004955AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6882B621D67C4A004955AD /* AppDelegate.swift */; };
-		DA6882BE21D67C4C004955AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA6882BD21D67C4C004955AD /* Assets.xcassets */; };
-		DA6882CC21D67C4C004955AD /* JustGroceriesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6882CB21D67C4C004955AD /* JustGroceriesTests.swift */; };
-		DAAA9AD621D67E7600487F07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAAA9AD521D67E7600487F07 /* GoogleService-Info.plist */; };
-		DAAA9ADC21D6819600487F07 /* Sample.json in Resources */ = {isa = PBXBuildFile; fileRef = DAAA9ADB21D6819600487F07 /* Sample.json */; };
-		DAAA9ADF21D681BB00487F07 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA9ADD21D681BA00487F07 /* User.swift */; };
-		DAAA9AE021D681BB00487F07 /* GroceryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA9ADE21D681BA00487F07 /* GroceryItem.swift */; };
-		DAAA9AE421D681DA00487F07 /* OnlineUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA9AE121D681D900487F07 /* OnlineUsersTableViewController.swift */; };
-		DAAA9AE521D681DA00487F07 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA9AE221D681D900487F07 /* LoginViewController.swift */; };
-		DAAA9AE621D681DA00487F07 /* GroceryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAA9AE321D681DA00487F07 /* GroceryListTableViewController.swift */; };
-		DAC64FB121D6968000BA336A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAC64FB021D6968000BA336A /* Main.storyboard */; };
-		DAC64FBB21D69E3A00BA336A /* IMG_0766.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAC64FB521D69E3A00BA336A /* IMG_0766.jpg */; };
-		DAC64FBC21D69E3A00BA336A /* IMG_0767.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAC64FB621D69E3A00BA336A /* IMG_0767.jpg */; };
-		DAC64FBD21D69E3A00BA336A /* IMG_0765.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAC64FB721D69E3A00BA336A /* IMG_0765.jpg */; };
-		DAC64FBE21D69E3A00BA336A /* IMG_0770.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAC64FB821D69E3A00BA336A /* IMG_0770.jpg */; };
-		DAC64FBF21D69E3A00BA336A /* IMG_0769.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAC64FB921D69E3A00BA336A /* IMG_0769.jpg */; };
-		DAC64FC021D69E3A00BA336A /* IMG_0768.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DAC64FBA21D69E3A00BA336A /* IMG_0768.jpg */; };
+		2379C92E23EC72A40094D6A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2379C92D23EC72A40094D6A8 /* AppDelegate.swift */; };
+		2379C93023EC72A40094D6A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2379C92F23EC72A40094D6A8 /* SceneDelegate.swift */; };
+		2379C93223EC72A40094D6A8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2379C93123EC72A40094D6A8 /* ContentView.swift */; };
+		2379C93423EC72A50094D6A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2379C93323EC72A50094D6A8 /* Assets.xcassets */; };
+		2379C93723EC72A50094D6A8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2379C93623EC72A50094D6A8 /* Preview Assets.xcassets */; };
+		2379C93A23EC72A50094D6A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2379C93823EC72A50094D6A8 /* LaunchScreen.storyboard */; };
+		9984A68AEA2E70A5E9F8EFC9 /* libPods-JustGroceries.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEED604202FC5393B0254BD /* libPods-JustGroceries.a */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		DA6882C821D67C4C004955AD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DA6882AB21D67C4A004955AD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DA6882B221D67C4A004955AD;
-			remoteInfo = JustGroceries;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		09428A074E541D028D84D030 /* Pods-JustGroceries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGroceries.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JustGroceries/Pods-JustGroceries.debug.xcconfig"; sourceTree = "<group>"; };
-		236EC8E623EB1F5900607093 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
-		236EC8EA23EB298600607093 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		23B76DD523E9EE2B003A4DDC /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		23B76DD723E9F187003A4DDC /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		23B76DDB23EA5842003A4DDC /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
-		23DA3E0623EB6A7500B3C607 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		34D5782343AAC985E89702A4 /* Pods-JustGroceries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGroceries.release.xcconfig"; path = "Pods/Target Support Files/Pods-JustGroceries/Pods-JustGroceries.release.xcconfig"; sourceTree = "<group>"; };
-		53A3AF04833DC4A23603BEA3 /* libPods-JustGroceries.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JustGroceries.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		55FDD2964017814E8FA6779B /* Pods-JustGroceriesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGroceriesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JustGroceriesTests/Pods-JustGroceriesTests.debug.xcconfig"; sourceTree = "<group>"; };
-		C8C4D04EFE1D77869BDECD5D /* Pods-JustGroceriesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGroceriesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JustGroceriesTests/Pods-JustGroceriesTests.release.xcconfig"; sourceTree = "<group>"; };
-		DA02E51321D693E0002ADF22 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
-		DA6882B321D67C4A004955AD /* JustGroceries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustGroceries.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA6882B621D67C4A004955AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DA6882BD21D67C4C004955AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DA6882C221D67C4C004955AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DA6882C721D67C4C004955AD /* JustGroceriesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JustGroceriesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA6882CB21D67C4C004955AD /* JustGroceriesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustGroceriesTests.swift; sourceTree = "<group>"; };
-		DA6882CD21D67C4C004955AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DAAA9AD521D67E7600487F07 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		DAAA9ADB21D6819600487F07 /* Sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Sample.json; sourceTree = "<group>"; };
-		DAAA9ADD21D681BA00487F07 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		DAAA9ADE21D681BA00487F07 /* GroceryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryItem.swift; sourceTree = "<group>"; };
-		DAAA9AE121D681D900487F07 /* OnlineUsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineUsersTableViewController.swift; sourceTree = "<group>"; };
-		DAAA9AE221D681D900487F07 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		DAAA9AE321D681DA00487F07 /* GroceryListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryListTableViewController.swift; sourceTree = "<group>"; };
-		DAC64FB021D6968000BA336A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		DAC64FB521D69E3A00BA336A /* IMG_0766.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0766.jpg; sourceTree = "<group>"; };
-		DAC64FB621D69E3A00BA336A /* IMG_0767.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0767.jpg; sourceTree = "<group>"; };
-		DAC64FB721D69E3A00BA336A /* IMG_0765.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0765.jpg; sourceTree = "<group>"; };
-		DAC64FB821D69E3A00BA336A /* IMG_0770.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0770.jpg; sourceTree = "<group>"; };
-		DAC64FB921D69E3A00BA336A /* IMG_0769.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0769.jpg; sourceTree = "<group>"; };
-		DAC64FBA21D69E3A00BA336A /* IMG_0768.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0768.jpg; sourceTree = "<group>"; };
-		DAC64FC121D6C4BC00BA336A /* JustGroceries.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JustGroceries.entitlements; sourceTree = "<group>"; };
-		FC1722EF7DFCDCA9EC94C98E /* libPods-JustGroceriesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JustGroceriesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2379C92A23EC72A40094D6A8 /* JustGroceries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustGroceries.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2379C92D23EC72A40094D6A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2379C92F23EC72A40094D6A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2379C93123EC72A40094D6A8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2379C93323EC72A50094D6A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2379C93623EC72A50094D6A8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2379C93923EC72A50094D6A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2379C93B23EC72A50094D6A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F9107873AED9E61EC5A0076 /* Pods-JustGroceries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGroceries.release.xcconfig"; path = "Target Support Files/Pods-JustGroceries/Pods-JustGroceries.release.xcconfig"; sourceTree = "<group>"; };
+		ACEED604202FC5393B0254BD /* libPods-JustGroceries.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JustGroceries.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB96408318900099C54B052D /* Pods-JustGroceries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGroceries.debug.xcconfig"; path = "Target Support Files/Pods-JustGroceries/Pods-JustGroceries.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DA6882B021D67C4A004955AD /* Frameworks */ = {
+		2379C92723EC72A40094D6A8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23B76DD623E9EE2B003A4DDC /* SwiftUI.framework in Frameworks */,
-				8EE4D44B9CC686540A14B97A /* libPods-JustGroceries.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DA6882C421D67C4C004955AD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AB9A78FE9ACE907C58AE3A2D /* libPods-JustGroceriesTests.a in Frameworks */,
+				9984A68AEA2E70A5E9F8EFC9 /* libPods-JustGroceries.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		23B76DD423E9E821003A4DDC /* SwiftUI */ = {
+		2379C92123EC72A40094D6A8 = {
 			isa = PBXGroup;
 			children = (
-				23B76DD723E9F187003A4DDC /* LoginView.swift */,
-				23B76DDB23EA5842003A4DDC /* UserAuth.swift */,
-				236EC8E623EB1F5900607093 /* LaunchView.swift */,
-			);
-			path = SwiftUI;
-			sourceTree = "<group>";
-		};
-		23DA3E0523EB6A4C00B3C607 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				DA6882B621D67C4A004955AD /* AppDelegate.swift */,
-				23DA3E0623EB6A7500B3C607 /* SceneDelegate.swift */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		35C18ACEAFD813280F048C8B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				09428A074E541D028D84D030 /* Pods-JustGroceries.debug.xcconfig */,
-				34D5782343AAC985E89702A4 /* Pods-JustGroceries.release.xcconfig */,
-				55FDD2964017814E8FA6779B /* Pods-JustGroceriesTests.debug.xcconfig */,
-				C8C4D04EFE1D77869BDECD5D /* Pods-JustGroceriesTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		56E9311EA971343F280DB198 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				23B76DD523E9EE2B003A4DDC /* SwiftUI.framework */,
-				53A3AF04833DC4A23603BEA3 /* libPods-JustGroceries.a */,
-				FC1722EF7DFCDCA9EC94C98E /* libPods-JustGroceriesTests.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DA6882AA21D67C4A004955AD = {
-			isa = PBXGroup;
-			children = (
-				DA6882B521D67C4A004955AD /* JustGroceries */,
-				DA6882CA21D67C4C004955AD /* JustGroceriesTests */,
-				DA6882B421D67C4A004955AD /* Products */,
-				35C18ACEAFD813280F048C8B /* Pods */,
-				56E9311EA971343F280DB198 /* Frameworks */,
+				2379C92C23EC72A40094D6A8 /* JustGroceries */,
+				2379C92B23EC72A40094D6A8 /* Products */,
+				B79E0EE478047077548E632D /* Pods */,
+				C405B16B668304EA96E42200 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		DA6882B421D67C4A004955AD /* Products */ = {
+		2379C92B23EC72A40094D6A8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DA6882B321D67C4A004955AD /* JustGroceries.app */,
-				DA6882C721D67C4C004955AD /* JustGroceriesTests.xctest */,
+				2379C92A23EC72A40094D6A8 /* JustGroceries.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DA6882B521D67C4A004955AD /* JustGroceries */ = {
+		2379C92C23EC72A40094D6A8 /* JustGroceries */ = {
 			isa = PBXGroup;
 			children = (
-				23DA3E0523EB6A4C00B3C607 /* Main */,
-				DAAA9AD821D67F4F00487F07 /* Views */,
-				DAAA9AD721D67F3200487F07 /* ViewControllers */,
-				23B76DD423E9E821003A4DDC /* SwiftUI */,
-				DAAA9ADA21D67FB000487F07 /* Models */,
-				DAAA9AD921D67F9600487F07 /* JSON */,
-				DAC64FB421D69E3A00BA336A /* images */,
-				DA6882BD21D67C4C004955AD /* Assets.xcassets */,
-				DA6882C221D67C4C004955AD /* Info.plist */,
-				DAAA9AD521D67E7600487F07 /* GoogleService-Info.plist */,
-				DAC64FC121D6C4BC00BA336A /* JustGroceries.entitlements */,
-				DA02E51321D693E0002ADF22 /* README.md */,
+				2379C92D23EC72A40094D6A8 /* AppDelegate.swift */,
+				2379C92F23EC72A40094D6A8 /* SceneDelegate.swift */,
+				2379C93123EC72A40094D6A8 /* ContentView.swift */,
+				2379C93323EC72A50094D6A8 /* Assets.xcassets */,
+				2379C93823EC72A50094D6A8 /* LaunchScreen.storyboard */,
+				2379C93B23EC72A50094D6A8 /* Info.plist */,
+				2379C93523EC72A50094D6A8 /* Preview Content */,
 			);
 			path = JustGroceries;
 			sourceTree = "<group>";
 		};
-		DA6882CA21D67C4C004955AD /* JustGroceriesTests */ = {
+		2379C93523EC72A50094D6A8 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				DA6882CB21D67C4C004955AD /* JustGroceriesTests.swift */,
-				DA6882CD21D67C4C004955AD /* Info.plist */,
+				2379C93623EC72A50094D6A8 /* Preview Assets.xcassets */,
 			);
-			path = JustGroceriesTests;
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		DAAA9AD721D67F3200487F07 /* ViewControllers */ = {
+		B79E0EE478047077548E632D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DAAA9AE321D681DA00487F07 /* GroceryListTableViewController.swift */,
-				DAAA9AE221D681D900487F07 /* LoginViewController.swift */,
-				DAAA9AE121D681D900487F07 /* OnlineUsersTableViewController.swift */,
+				DB96408318900099C54B052D /* Pods-JustGroceries.debug.xcconfig */,
+				4F9107873AED9E61EC5A0076 /* Pods-JustGroceries.release.xcconfig */,
 			);
-			path = ViewControllers;
+			path = Pods;
 			sourceTree = "<group>";
 		};
-		DAAA9AD821D67F4F00487F07 /* Views */ = {
+		C405B16B668304EA96E42200 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DAC64FB021D6968000BA336A /* Main.storyboard */,
-				236EC8EA23EB298600607093 /* LaunchScreen.storyboard */,
+				ACEED604202FC5393B0254BD /* libPods-JustGroceries.a */,
 			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		DAAA9AD921D67F9600487F07 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				DAAA9ADB21D6819600487F07 /* Sample.json */,
-			);
-			path = JSON;
-			sourceTree = "<group>";
-		};
-		DAAA9ADA21D67FB000487F07 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				DAAA9ADE21D681BA00487F07 /* GroceryItem.swift */,
-				DAAA9ADD21D681BA00487F07 /* User.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		DAC64FB421D69E3A00BA336A /* images */ = {
-			isa = PBXGroup;
-			children = (
-				DAC64FB521D69E3A00BA336A /* IMG_0766.jpg */,
-				DAC64FB621D69E3A00BA336A /* IMG_0767.jpg */,
-				DAC64FB721D69E3A00BA336A /* IMG_0765.jpg */,
-				DAC64FB821D69E3A00BA336A /* IMG_0770.jpg */,
-				DAC64FB921D69E3A00BA336A /* IMG_0769.jpg */,
-				DAC64FBA21D69E3A00BA336A /* IMG_0768.jpg */,
-			);
-			path = images;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DA6882B221D67C4A004955AD /* JustGroceries */ = {
+		2379C92923EC72A40094D6A8 /* JustGroceries */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DA6882D021D67C4C004955AD /* Build configuration list for PBXNativeTarget "JustGroceries" */;
+			buildConfigurationList = 2379C93E23EC72A50094D6A8 /* Build configuration list for PBXNativeTarget "JustGroceries" */;
 			buildPhases = (
-				5E267E779CA391D18871358E /* [CP] Check Pods Manifest.lock */,
-				DA6882AF21D67C4A004955AD /* Sources */,
-				DA6882B021D67C4A004955AD /* Frameworks */,
-				DA6882B121D67C4A004955AD /* Resources */,
-				5954CFB73E0F1C89700B39D1 /* [CP] Copy Pods Resources */,
+				42E330B4362FA60EF0619FF1 /* [CP] Check Pods Manifest.lock */,
+				2379C92623EC72A40094D6A8 /* Sources */,
+				2379C92723EC72A40094D6A8 /* Frameworks */,
+				2379C92823EC72A40094D6A8 /* Resources */,
+				B370BA6BB932C08213F13005 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -260,56 +118,25 @@
 			);
 			name = JustGroceries;
 			productName = JustGroceries;
-			productReference = DA6882B321D67C4A004955AD /* JustGroceries.app */;
+			productReference = 2379C92A23EC72A40094D6A8 /* JustGroceries.app */;
 			productType = "com.apple.product-type.application";
-		};
-		DA6882C621D67C4C004955AD /* JustGroceriesTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DA6882D321D67C4C004955AD /* Build configuration list for PBXNativeTarget "JustGroceriesTests" */;
-			buildPhases = (
-				AFD2548A551930EC5BC32D2C /* [CP] Check Pods Manifest.lock */,
-				DA6882C321D67C4C004955AD /* Sources */,
-				DA6882C421D67C4C004955AD /* Frameworks */,
-				DA6882C521D67C4C004955AD /* Resources */,
-				B806D5E97D0DE3B383C392D1 /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DA6882C921D67C4C004955AD /* PBXTargetDependency */,
-			);
-			name = JustGroceriesTests;
-			productName = JustGroceriesTests;
-			productReference = DA6882C721D67C4C004955AD /* JustGroceriesTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		DA6882AB21D67C4A004955AD /* Project object */ = {
+		2379C92223EC72A40094D6A8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1010;
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Paul Linck";
 				TargetAttributes = {
-					DA6882B221D67C4A004955AD = {
-						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1130;
-						SystemCapabilities = {
-							com.apple.Keychain = {
-								enabled = 1;
-							};
-						};
-					};
-					DA6882C621D67C4C004955AD = {
-						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1130;
-						TestTargetID = DA6882B221D67C4A004955AD;
+					2379C92923EC72A40094D6A8 = {
+						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
 			};
-			buildConfigurationList = DA6882AE21D67C4A004955AD /* Build configuration list for PBXProject "JustGroceries" */;
+			buildConfigurationList = 2379C92523EC72A40094D6A8 /* Build configuration list for PBXProject "JustGroceries" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -317,65 +144,31 @@
 				en,
 				Base,
 			);
-			mainGroup = DA6882AA21D67C4A004955AD;
-			productRefGroup = DA6882B421D67C4A004955AD /* Products */;
+			mainGroup = 2379C92123EC72A40094D6A8;
+			productRefGroup = 2379C92B23EC72A40094D6A8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DA6882B221D67C4A004955AD /* JustGroceries */,
-				DA6882C621D67C4C004955AD /* JustGroceriesTests */,
+				2379C92923EC72A40094D6A8 /* JustGroceries */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DA6882B121D67C4A004955AD /* Resources */ = {
+		2379C92823EC72A40094D6A8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAC64FB121D6968000BA336A /* Main.storyboard in Resources */,
-				DAC64FBF21D69E3A00BA336A /* IMG_0769.jpg in Resources */,
-				DAC64FBE21D69E3A00BA336A /* IMG_0770.jpg in Resources */,
-				DA02E51421D693E0002ADF22 /* README.md in Resources */,
-				236EC8EB23EB298600607093 /* LaunchScreen.storyboard in Resources */,
-				DAC64FC021D69E3A00BA336A /* IMG_0768.jpg in Resources */,
-				DAAA9ADC21D6819600487F07 /* Sample.json in Resources */,
-				DAC64FBC21D69E3A00BA336A /* IMG_0767.jpg in Resources */,
-				DAC64FBD21D69E3A00BA336A /* IMG_0765.jpg in Resources */,
-				DAC64FBB21D69E3A00BA336A /* IMG_0766.jpg in Resources */,
-				DAAA9AD621D67E7600487F07 /* GoogleService-Info.plist in Resources */,
-				DA6882BE21D67C4C004955AD /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DA6882C521D67C4C004955AD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				2379C93A23EC72A50094D6A8 /* LaunchScreen.storyboard in Resources */,
+				2379C93723EC72A50094D6A8 /* Preview Assets.xcassets in Resources */,
+				2379C93423EC72A50094D6A8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5954CFB73E0F1C89700B39D1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JustGroceries/Pods-JustGroceries-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JustGroceries/Pods-JustGroceries-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JustGroceries/Pods-JustGroceries-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5E267E779CA391D18871358E /* [CP] Check Pods Manifest.lock */ = {
+		42E330B4362FA60EF0619FF1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -397,85 +190,51 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AFD2548A551930EC5BC32D2C /* [CP] Check Pods Manifest.lock */ = {
+		B370BA6BB932C08213F13005 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-JustGroceriesTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B806D5E97D0DE3B383C392D1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JustGroceriesTests/Pods-JustGroceriesTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-JustGroceries/Pods-JustGroceries-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JustGroceriesTests/Pods-JustGroceriesTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-JustGroceries/Pods-JustGroceries-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JustGroceriesTests/Pods-JustGroceriesTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JustGroceries/Pods-JustGroceries-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DA6882AF21D67C4A004955AD /* Sources */ = {
+		2379C92623EC72A40094D6A8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAAA9AE521D681DA00487F07 /* LoginViewController.swift in Sources */,
-				DAAA9AE421D681DA00487F07 /* OnlineUsersTableViewController.swift in Sources */,
-				23B76DDC23EA5842003A4DDC /* UserAuth.swift in Sources */,
-				DA6882B721D67C4A004955AD /* AppDelegate.swift in Sources */,
-				23B76DD823E9F187003A4DDC /* LoginView.swift in Sources */,
-				23DA3E0723EB6A7500B3C607 /* SceneDelegate.swift in Sources */,
-				DAAA9AE621D681DA00487F07 /* GroceryListTableViewController.swift in Sources */,
-				DAAA9AE021D681BB00487F07 /* GroceryItem.swift in Sources */,
-				236EC8E723EB1F5900607093 /* LaunchView.swift in Sources */,
-				DAAA9ADF21D681BB00487F07 /* User.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DA6882C321D67C4C004955AD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DA6882CC21D67C4C004955AD /* JustGroceriesTests.swift in Sources */,
+				2379C92E23EC72A40094D6A8 /* AppDelegate.swift in Sources */,
+				2379C93023EC72A40094D6A8 /* SceneDelegate.swift in Sources */,
+				2379C93223EC72A40094D6A8 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		DA6882C921D67C4C004955AD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DA6882B221D67C4A004955AD /* JustGroceries */;
-			targetProxy = DA6882C821D67C4C004955AD /* PBXContainerItemProxy */;
+/* Begin PBXVariantGroup section */
+		2379C93823EC72A50094D6A8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2379C93923EC72A50094D6A8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
 		};
-/* End PBXTargetDependency section */
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		DA6882CE21D67C4C004955AD /* Debug */ = {
+		2379C93C23EC72A50094D6A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -507,7 +266,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -536,7 +294,7 @@
 			};
 			name = Debug;
 		};
-		DA6882CF21D67C4C004955AD /* Release */ = {
+		2379C93D23EC72A50094D6A8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -568,7 +326,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -591,16 +348,16 @@
 			};
 			name = Release;
 		};
-		DA6882D121D67C4C004955AD /* Debug */ = {
+		2379C93F23EC72A50094D6A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09428A074E541D028D84D030 /* Pods-JustGroceries.debug.xcconfig */;
+			baseConfigurationReference = DB96408318900099C54B052D /* Pods-JustGroceries.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = JustGroceries/JustGroceries.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"JustGroceries/Preview Content\"";
 				DEVELOPMENT_TEAM = 733J326MK6;
+				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = JustGroceries/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -612,16 +369,16 @@
 			};
 			name = Debug;
 		};
-		DA6882D221D67C4C004955AD /* Release */ = {
+		2379C94023EC72A50094D6A8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 34D5782343AAC985E89702A4 /* Pods-JustGroceries.release.xcconfig */;
+			baseConfigurationReference = 4F9107873AED9E61EC5A0076 /* Pods-JustGroceries.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = JustGroceries/JustGroceries.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"JustGroceries/Preview Content\"";
 				DEVELOPMENT_TEAM = 733J326MK6;
+				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = JustGroceries/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -630,84 +387,31 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		DA6882D421D67C4C004955AD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55FDD2964017814E8FA6779B /* Pods-JustGroceriesTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 733J326MK6;
-				INFOPLIST_FILE = JustGroceriesTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.linck.JustGroceriesTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JustGroceries.app/JustGroceries";
-			};
-			name = Debug;
-		};
-		DA6882D521D67C4C004955AD /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C8C4D04EFE1D77869BDECD5D /* Pods-JustGroceriesTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 733J326MK6;
-				INFOPLIST_FILE = JustGroceriesTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.linck.JustGroceriesTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JustGroceries.app/JustGroceries";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DA6882AE21D67C4A004955AD /* Build configuration list for PBXProject "JustGroceries" */ = {
+		2379C92523EC72A40094D6A8 /* Build configuration list for PBXProject "JustGroceries" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DA6882CE21D67C4C004955AD /* Debug */,
-				DA6882CF21D67C4C004955AD /* Release */,
+				2379C93C23EC72A50094D6A8 /* Debug */,
+				2379C93D23EC72A50094D6A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DA6882D021D67C4C004955AD /* Build configuration list for PBXNativeTarget "JustGroceries" */ = {
+		2379C93E23EC72A50094D6A8 /* Build configuration list for PBXNativeTarget "JustGroceries" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DA6882D121D67C4C004955AD /* Debug */,
-				DA6882D221D67C4C004955AD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DA6882D321D67C4C004955AD /* Build configuration list for PBXNativeTarget "JustGroceriesTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DA6882D421D67C4C004955AD /* Debug */,
-				DA6882D521D67C4C004955AD /* Release */,
+				2379C93F23EC72A50094D6A8 /* Debug */,
+				2379C94023EC72A50094D6A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = DA6882AB21D67C4A004955AD /* Project object */;
+	rootObject = 2379C92223EC72A40094D6A8 /* Project object */;
 }
