@@ -13,6 +13,10 @@
 		2379C93423EC72A50094D6A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2379C93323EC72A50094D6A8 /* Assets.xcassets */; };
 		2379C93723EC72A50094D6A8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2379C93623EC72A50094D6A8 /* Preview Assets.xcassets */; };
 		2379C93A23EC72A50094D6A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2379C93823EC72A50094D6A8 /* LaunchScreen.storyboard */; };
+		23C7158723EC99C200BE1A9C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7158623EC99C200BE1A9C /* User.swift */; };
+		23C7158923EC9B6700BE1A9C /* FirebaseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7158823EC9B6700BE1A9C /* FirebaseSession.swift */; };
+		23C7158B23ECDE2200BE1A9C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23C7158A23ECDE2200BE1A9C /* Default-568h@2x.png */; };
+		23C7158D23ECE2D100BE1A9C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7158C23ECE2D100BE1A9C /* LoginView.swift */; };
 		23DA193923EC7C0A0053BB9C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 23DA193823EC7C0A0053BB9C /* GoogleService-Info.plist */; };
 		9984A68AEA2E70A5E9F8EFC9 /* libPods-JustGroceries.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEED604202FC5393B0254BD /* libPods-JustGroceries.a */; };
 /* End PBXBuildFile section */
@@ -26,6 +30,10 @@
 		2379C93623EC72A50094D6A8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2379C93923EC72A50094D6A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2379C93B23EC72A50094D6A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23C7158623EC99C200BE1A9C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		23C7158823EC9B6700BE1A9C /* FirebaseSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSession.swift; sourceTree = "<group>"; };
+		23C7158A23ECDE2200BE1A9C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		23C7158C23ECE2D100BE1A9C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		23DA193823EC7C0A0053BB9C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4F9107873AED9E61EC5A0076 /* Pods-JustGroceries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGroceries.release.xcconfig"; path = "Target Support Files/Pods-JustGroceries/Pods-JustGroceries.release.xcconfig"; sourceTree = "<group>"; };
 		ACEED604202FC5393B0254BD /* libPods-JustGroceries.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JustGroceries.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +55,7 @@
 		2379C92123EC72A40094D6A8 = {
 			isa = PBXGroup;
 			children = (
+				23C7158A23ECDE2200BE1A9C /* Default-568h@2x.png */,
 				2379C92C23EC72A40094D6A8 /* JustGroceries */,
 				2379C92B23EC72A40094D6A8 /* Products */,
 				B79E0EE478047077548E632D /* Pods */,
@@ -65,13 +74,12 @@
 		2379C92C23EC72A40094D6A8 /* JustGroceries */ = {
 			isa = PBXGroup;
 			children = (
-				23DA193823EC7C0A0053BB9C /* GoogleService-Info.plist */,
-				2379C92D23EC72A40094D6A8 /* AppDelegate.swift */,
-				2379C92F23EC72A40094D6A8 /* SceneDelegate.swift */,
-				2379C93123EC72A40094D6A8 /* ContentView.swift */,
-				2379C93323EC72A50094D6A8 /* Assets.xcassets */,
-				2379C93823EC72A50094D6A8 /* LaunchScreen.storyboard */,
 				2379C93B23EC72A50094D6A8 /* Info.plist */,
+				23DA193823EC7C0A0053BB9C /* GoogleService-Info.plist */,
+				23C7158223EC992000BE1A9C /* Main */,
+				23C7158323EC994C00BE1A9C /* Views */,
+				23C7158523EC999D00BE1A9C /* Models */,
+				23C7158423EC997400BE1A9C /* assets */,
 				2379C93523EC72A50094D6A8 /* Preview Content */,
 			);
 			path = JustGroceries;
@@ -83,6 +91,42 @@
 				2379C93623EC72A50094D6A8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		23C7158223EC992000BE1A9C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				2379C93823EC72A50094D6A8 /* LaunchScreen.storyboard */,
+				2379C92F23EC72A40094D6A8 /* SceneDelegate.swift */,
+				2379C92D23EC72A40094D6A8 /* AppDelegate.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		23C7158323EC994C00BE1A9C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2379C93123EC72A40094D6A8 /* ContentView.swift */,
+				23C7158C23ECE2D100BE1A9C /* LoginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		23C7158423EC997400BE1A9C /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				2379C93323EC72A50094D6A8 /* Assets.xcassets */,
+			);
+			path = assets;
+			sourceTree = "<group>";
+		};
+		23C7158523EC999D00BE1A9C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				23C7158623EC99C200BE1A9C /* User.swift */,
+				23C7158823EC9B6700BE1A9C /* FirebaseSession.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		B79E0EE478047077548E632D /* Pods */ = {
@@ -165,6 +209,7 @@
 				2379C93A23EC72A50094D6A8 /* LaunchScreen.storyboard in Resources */,
 				23DA193923EC7C0A0053BB9C /* GoogleService-Info.plist in Resources */,
 				2379C93723EC72A50094D6A8 /* Preview Assets.xcassets in Resources */,
+				23C7158B23ECDE2200BE1A9C /* Default-568h@2x.png in Resources */,
 				2379C93423EC72A50094D6A8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,6 +263,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23C7158D23ECE2D100BE1A9C /* LoginView.swift in Sources */,
+				23C7158923EC9B6700BE1A9C /* FirebaseSession.swift in Sources */,
+				23C7158723EC99C200BE1A9C /* User.swift in Sources */,
 				2379C92E23EC72A40094D6A8 /* AppDelegate.swift in Sources */,
 				2379C93023EC72A40094D6A8 /* SceneDelegate.swift in Sources */,
 				2379C93223EC72A40094D6A8 /* ContentView.swift in Sources */,
