@@ -37,7 +37,7 @@ struct LoginView: View {
   func logIn() {
     session.logIn(email: email, password: password) { (result, error) in
       if error != nil {
-        print("Error")
+        print("Error Loggin In, Error \(String(describing: error))")
       } else {
         self.email = ""
         self.password = ""
