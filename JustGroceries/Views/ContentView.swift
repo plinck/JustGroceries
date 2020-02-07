@@ -9,13 +9,52 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, World!")
+  //MARK: Properties
+  @ObservedObject var session = FirebaseSession()
+  
+  var body: some View {
+    
+    NavigationView {
+      Group {
+        if session.session != nil {
+          VStack {
+            NavigationLink(destination: LoginView()) {
+              Text("Dont click me")
+            }
+            
+            List {
+              NavigationLink(destination: LoginView()) {
+                Text("Dont click me")
+              }
+            }
+            .navigationBarItems(trailing: Button(action: {
+              self.session.logOut()
+            }) {
+              Text("Logout")
+            })
+          }
+        } else {
+          LoginView()
+            .navigationBarItems(trailing: Text(""))
+        }
+      }
+      .onAppear(perform: getUser)
+      .navigationBarTitle(Text("Just Groceries List"))
+      .padding()
     }
+  }
+  
+  //MARK: Functions
+  func getUser() {
+    session.listen()
+  }
+
 }
 
+#if DEBUG
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+  }
 }
+#endif
