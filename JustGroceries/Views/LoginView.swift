@@ -54,7 +54,7 @@ struct LoginView: View {
             .padding()
             .background(/*@START_MENU_TOKEN@*/Color.green/*@END_MENU_TOKEN@*/)
             .cornerRadius(/*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
-            
+                        
             //.padding()
             Spacer()
             NavigationLink(destination: SignUp()) {
@@ -74,6 +74,7 @@ struct LoginView: View {
             }
         }
     }
+    
 }
 
 #if DEBUG
