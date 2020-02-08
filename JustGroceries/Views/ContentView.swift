@@ -39,7 +39,7 @@ struct ContentView: View {
         }
       }
       .onAppear(perform: getUser)
-      .navigationBarTitle(Text("Just Groceries List"))
+      .navigationBarTitle(Text("Just Groceries").font(.title).foregroundColor(.blue))
       .padding()
     }
   }

@@ -58,7 +58,7 @@ class FirebaseSession: ObservableObject {
                         
                     } else {
                         print("User \(userID) does not exist, adding")
-                        self.createUserInFirestore(currentUser: currentUser, onlineStatus: true)
+                        self.createUserInFirestore(user: currentUser, onlineStatus: true)
                     }
                 }) { (err) in
                     print("Error found on login, so adding to firebase: \(err.localizedDescription)")
@@ -70,10 +70,12 @@ class FirebaseSession: ObservableObject {
         }
     }//func
     
+    // Login to firebase Auth
     func logIn(email: String, password: String, handler: @escaping AuthDataResultCallback) {
         Auth.auth().signIn(withEmail: email, password: password, completion: handler)
     }
     
+    // Logout whih kills session
     func logOut() {
         try! Auth.auth().signOut()
         self.isLoggedIn = false
@@ -83,15 +85,44 @@ class FirebaseSession: ObservableObject {
         self.session = nil
     }
     
+    // Sign up for account
+    // TODO: - Add Google and Apple ID signin
+    func signUp(email: String, password: String,
+                firstName: String,
+                lastName: String,
+                handler: @escaping AuthDataResultCallback) {
+        
+        let displayName = "\(firstName) \(lastName)"
+
+        // Auth.auth().createUser(withEmail: email, password: password, completion: handler)
+        Auth.auth().createUser(withEmail: email, password: password) { user, error in
+            if error == nil && user != nil {
+                print("User created, updating profile: \(error?.localizedDescription ?? "")")
+                
+                // Update user profile for displayName (and later do URL of user image using cloud storage)
+                let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                changeRequest?.displayName = displayName
+                changeRequest?.commitChanges { error in
+                    handler(user, error)
+                }
+            } else {
+                // Invoke callbackl from original function call
+                print("Error creating user: \(error?.localizedDescription ?? "")")
+                handler(user, error)
+            }
+        }
+
+    }    
+    
     // TODO: - Refactor ALL DB Calls to be outside these classes to make them less stickt
     // Add the signed up user to firebase realtime DB
-    func createUserInFirestore(currentUser: User, onlineStatus: Bool) {
+    func createUserInFirestore(user: User, onlineStatus: Bool) {
         // Firebase realtime DB
         // Use this reference to save the current user’s info.
-        self.usersRef.child(currentUser.uid).setValue(
-            ["email": currentUser.email,
-             "fistName": currentUser.firstName,
-             "lastName": currentUser.lastName,
+        self.usersRef.child(user.uid).setValue(
+            ["email": user.email,
+             "fistName": user.firstName,
+             "lastName": user.lastName,
              "onlineStatus": onlineStatus
             ]
         )
