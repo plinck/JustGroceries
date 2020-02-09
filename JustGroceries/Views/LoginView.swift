@@ -82,6 +82,9 @@ struct LoginView: View {
             .background(Color.white)
             .cornerRadius(8.0)
             .shadow(radius: 4.0)
+            
+//            let button = GIDSignInButton()
+//            button.colorScheme = .dark
                         
             //.padding()
             Spacer()
@@ -120,7 +123,19 @@ struct LoginView: View {
         }
         
         func attemptLoginGoogle() {
-            GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.shared.windows.last?.rootViewController
+            // MARK: - Fixed google not be able to login again afert first attempt
+            // I replaced the line below to force the user to go back to content view
+            // created vc from rootview controller which is contentView (hostted)
+            // Then, set that as the view google goes back to after login
+            // that view is smart enough to go to login if user is not authenticated.
+            
+            //GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.shared.windows.last?.rootViewController
+            
+            // New code to force google to go back to main page after login every time
+            // it was erroting out after frst time.  hope this isnt a leak in memory
+            let vc = UIApplication.shared.windows.first!.rootViewController
+            GIDSignIn.sharedInstance()?.presentingViewController = vc
+            // GIDSignIn.sharedInstance()?.presentingViewController = self
             GIDSignIn.sharedInstance()?.signIn()
         }
     }

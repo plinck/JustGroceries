@@ -12,7 +12,7 @@ import GoogleSignIn
 import SwiftUI
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // configure the FirebaseApp object and set the sign-in delegate.
         // See: https://firebase.google.com/docs/auth/ios/google-signin
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
-        GIDSignIn.sharedInstance().delegate = self as? GIDSignInDelegate
+        GIDSignIn.sharedInstance().delegate = self
         
         // Make the app work offline. Even offline updates that occur across app restarts will apply
         // to Firebase database once a connection is made. Pretty nice.
@@ -88,7 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         // ...
         if let error = error {
-            // ...
+            print("Error in google sign:_ didSignInFor: \(error.localizedDescription)")
             return
         }
         
@@ -101,10 +101,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Finally, authenticate with Firebase using the credential:
         Auth.auth().signIn(with: credential) { (authResult, error) in
             if let error = error {
-                // ...
+                print("Error in google signin Auth.auth().signIn: \(error.localizedDescription)")
                 return
             }
             // User is signed in
+            print("User: \(authResult?.user.email ?? "noemal"), Successfully signed in via google")
         }
     }
     
