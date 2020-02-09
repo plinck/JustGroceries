@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Firebase
+import GoogleSignIn
 
 class FirebaseSession: ObservableObject {
     

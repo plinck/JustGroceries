@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import GoogleSignIn
 
 struct LoginView: View {
     
@@ -49,11 +50,38 @@ struct LoginView: View {
             }
             
             Button(action: logIn) {
-                Text("Sign In").bold().foregroundColor(.yellow)
+                HStack {
+                    Image(systemName: "envelope").resizable().frame(width: 50, height: 50, alignment: .center)
+                    Text("Sign In with email").bold().foregroundColor(.yellow)
+                }.frame(width: 250, height: 60, alignment: .center)
             }
-            .padding()
-            .background(/*@START_MENU_TOKEN@*/Color.green/*@END_MENU_TOKEN@*/)
-            .cornerRadius(/*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
+            .padding(.horizontal)
+            .background(Color.white)
+            .cornerRadius(8.0)
+            .shadow(radius: 4.0)
+            
+            Button(action: logIn) {
+                HStack {
+                    // Image(systemName: "heart.fill")
+                    Image("ic_apple").renderingMode(.original).resizable().frame(width: 50, height: 50, alignment: .center)
+                    Text("Sign In with apple ID")
+                }.frame(width: 250, height: 60, alignment: .center)
+            }
+            .padding(.horizontal)
+            .background(Color.white)
+            .cornerRadius(8.0)
+            .shadow(radius: 4.0)
+
+
+            Button(action: logginGoogle, label: {
+                HStack { Image("ic_google").renderingMode(.original).resizable().frame(width: 50, height: 50, alignment: .center)
+                    Text("Signin with Google")
+                }.frame(width: 250, height: 60, alignment: .center)
+            })
+            .padding(.horizontal)
+            .background(Color.white)
+            .cornerRadius(8.0)
+            .shadow(radius: 4.0)
                         
             //.padding()
             Spacer()
@@ -75,6 +103,27 @@ struct LoginView: View {
         }
     }
     
+    // Google signin
+    func logginGoogle() {
+        let socialLogin = SocialLogin()
+        socialLogin.attemptLoginGoogle()
+    }
+    
+    // Google or other social media signin
+    struct SocialLogin: UIViewRepresentable {
+        
+        func makeUIView(context: UIViewRepresentableContext<SocialLogin>) -> UIView {
+            return UIView()
+        }
+        
+        func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<SocialLogin>) {
+        }
+        
+        func attemptLoginGoogle() {
+            GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.shared.windows.last?.rootViewController
+            GIDSignIn.sharedInstance()?.signIn()
+        }
+    }
 }
 
 #if DEBUG
