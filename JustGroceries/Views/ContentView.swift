@@ -16,7 +16,7 @@ struct ContentView: View {
     
     NavigationView {
       Group {
-        if session.session != nil {
+        if session.user != nil {
           VStack {
             NavigationLink(destination: LoginView()) {
               Text("Dont click me")
@@ -32,14 +32,21 @@ struct ContentView: View {
             }) {
               Text("Logout")
             })
+            Button(action: sendEmailVerifyLink) {
+                Text("Send Email ve").bold().foregroundColor(.yellow)
+            }
+            .padding()
+            .background(Color.red)
+            .cornerRadius(/*@START_MENU_TOKEN@*/10.0/*@END_MENU_TOKEN@*/)
           }
         } else {
           LoginView()
             .navigationBarItems(trailing: Text(""))
         }
+
       }
       .onAppear(perform: getUser)
-      .navigationBarTitle(Text("Just Groceries List"))
+      .navigationBarTitle(Text("Just Groceries").font(.title).foregroundColor(.blue))
       .padding()
     }
   }
@@ -48,6 +55,16 @@ struct ContentView: View {
   func getUser() {
     session.listen()
   }
+
+func sendEmailVerifyLink() {
+    session.sendEmailVerification() { (user, error) in
+      if let error = error {
+          print("Email verification did not send \(error.localizedDescription)")
+      } else {
+        print("Email verification did sent to: \(self.session.user?.email ?? "none")")
+      }
+    }
+}
 
 }
 

@@ -8,11 +8,12 @@
 
 import SwiftUI
 import Firebase
+import GoogleSignIn
 
 class FirebaseSession: ObservableObject {
     
     // MARK: - Properties
-    @Published var session: User?
+    @Published var user: User?
     @Published var isLoggedIn: Bool?
     
     var usersRef: DatabaseReference = Database.database().reference(withPath: "users")
@@ -25,14 +26,19 @@ class FirebaseSession: ObservableObject {
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if let user = user {
                 if let displayName = user.displayName {
-                    self.session = User(uid: user.uid, email:user.email!, displayName: displayName)
+                    self.user = User(uid: user.uid, email:user.email!, displayName: displayName)
                 } else {
-                    self.session = User(uid: user.uid, email:user.email!, displayName: "New User")
+                    self.user = User(uid: user.uid, email:user.email!, displayName: "New User")
                 }
                 self.isLoggedIn = true
                 
                 let userID = user.uid
-                let currentUser = self.session!
+                let currentUser = self.user!
+                if user.isEmailVerified {
+                    print("User's email is verified: \(user.isEmailVerified)")
+                } else {
+                    print("User's email is NOT verified: \(user.isEmailVerified)")
+                }
                 
                 // Update the online status in firebase realtime DB for this user if they already exist
                 // If they dont already exist, add a new user under users reference
@@ -58,40 +64,84 @@ class FirebaseSession: ObservableObject {
                         
                     } else {
                         print("User \(userID) does not exist, adding")
-                        self.createUserInFirestore(currentUser: currentUser, onlineStatus: true)
+                        self.createUserInFirestore(user: currentUser, onlineStatus: true)
                     }
                 }) { (err) in
                     print("Error found on login, so adding to firebase: \(err.localizedDescription)")
                 }
             } else {
                 self.isLoggedIn = false
-                self.session = nil
+                self.user = nil
             }
         }
     }//func
     
+    // Login to firebase Auth
     func logIn(email: String, password: String, handler: @escaping AuthDataResultCallback) {
         Auth.auth().signIn(withEmail: email, password: password, completion: handler)
     }
     
+    // Logout whih kills user
     func logOut() {
         try! Auth.auth().signOut()
         self.isLoggedIn = false
         // Update the online status for this user
-        self.usersRef.child("\(self.session!.uid)/onlineStatus").setValue(false)
+        self.usersRef.child("\(self.user!.uid)/onlineStatus").setValue(false)
         
-        self.session = nil
+        self.user = nil
     }
+    
+    // Send emailAuth link to firebase Auth
+    func sendEmailVerification(handler: @escaping AuthDataResultCallback) {
+        Auth.auth().currentUser?.sendEmailVerification { (error) in
+            if let error = error {
+                print("Email verification did not send \(error.localizedDescription)")
+            } else {
+                print("Email verification did sent to: \(Auth.auth().currentUser?.email ?? "none")")
+            }
+        }
+
+    }
+
+    
+    // Sign up for account
+    // TODO: - Add Google and Apple ID signin
+    func signUp(email: String, password: String,
+                firstName: String,
+                lastName: String,
+                handler: @escaping AuthDataResultCallback) {
+        
+        let displayName = "\(firstName) \(lastName)"
+
+        // Auth.auth().createUser(withEmail: email, password: password, completion: handler)
+        Auth.auth().createUser(withEmail: email, password: password) { user, error in
+            if error == nil && user != nil {
+                print("User created, updating profile: \(error?.localizedDescription ?? "")")
+                
+                // Update user profile for displayName (and later do URL of user image using cloud storage)
+                let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                changeRequest?.displayName = displayName
+                changeRequest?.commitChanges { error in
+                    handler(user, error)
+                }
+            } else {
+                // Invoke callbackl from original function call
+                print("Error creating user: \(error?.localizedDescription ?? "")")
+                handler(user, error)
+            }
+        }
+
+    }    
     
     // TODO: - Refactor ALL DB Calls to be outside these classes to make them less stickt
     // Add the signed up user to firebase realtime DB
-    func createUserInFirestore(currentUser: User, onlineStatus: Bool) {
+    func createUserInFirestore(user: User, onlineStatus: Bool) {
         // Firebase realtime DB
         // Use this reference to save the current user’s info.
-        self.usersRef.child(currentUser.uid).setValue(
-            ["email": currentUser.email,
-             "fistName": currentUser.firstName,
-             "lastName": currentUser.lastName,
+        self.usersRef.child(user.uid).setValue(
+            ["email": user.email,
+             "fistName": user.firstName,
+             "lastName": user.lastName,
              "onlineStatus": onlineStatus
             ]
         )
