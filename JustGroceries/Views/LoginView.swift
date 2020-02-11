@@ -19,8 +19,6 @@ struct LoginView: View {
     @State var password: String = ""
     
     @EnvironmentObject var session: FirebaseSession
-    let labels = ["Email", "Password"]
-    
     
     var body: some View {
         VStack {
