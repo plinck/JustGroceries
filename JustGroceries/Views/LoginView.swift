@@ -11,7 +11,6 @@ import GoogleSignIn
 import AuthenticationServices
 
 struct LoginView: View {
-    
     @Environment(\.window) var window: UIWindow?
     @State var appleSignInDelegates: SignInWithAppleDelegates! = nil
 
@@ -100,14 +99,14 @@ struct LoginView: View {
     private func loginApple() {
         // All sign in requests need an ASAuthorizationAppleIDRequest
         let request = ASAuthorizationAppleIDProvider().createRequest()
-        
+                
         // These are the pieces of data I want returned from apple signin request
         request.requestedScopes = [.fullName, .email]
-        
+
         // Generate the controller which will display the sign in dialog
         performAppleSignIn(using: [request])
     }
-    
+        
     /// Prompts the user if an existing iCloud Keychain credential or Apple ID credential is found.
     private func performExistingAccountSetupFlows() {
         #if !targetEnvironment(simulator)
@@ -131,7 +130,7 @@ struct LoginView: View {
             } else {
                 // show the user an error
             }
-        }
+        }        
         
         // Generate the ASAuthorizationController as before,
         // but this time, tell it to use custom delegate class
@@ -143,7 +142,6 @@ struct LoginView: View {
         // to display the Sign In with Apple modal view
         controller.performRequests()
     }
-
     
     // Google signin
     private func logginGoogle() {
