@@ -17,11 +17,19 @@ class SignInWithAppleDelegates: NSObject {
 
     private let signInSucceeded: (Bool) -> Void
     private weak var window: UIWindow!
+    private var currentNonce: String?
     
     init(window: UIWindow?, onSignedIn: @escaping (Bool) -> Void) {
         self.window = window
         self.signInSucceeded = onSignedIn
     }
+    
+    init(window: UIWindow?, nonce: String?, onSignedIn: @escaping (Bool) -> Void) {
+        self.window = window
+        self.currentNonce = nonce
+        self.signInSucceeded = onSignedIn
+    }    
+    
 }
 
 extension SignInWithAppleDelegates: ASAuthorizationControllerDelegate {
@@ -167,7 +175,8 @@ extension SignInWithAppleDelegates {
         // Initialize a Firebase credential.
         let credential = OAuthProvider.credential(withProviderID: "apple.com",
                                                   idToken: idTokenString,
-                                                  rawNonce: nonce)
+                                                  rawNonce: nonce,
+                                                  accessToken: nonce)
         
         // Sign in with Firebase.
         Auth.auth().signIn(with: credential) { (authResult, error) in

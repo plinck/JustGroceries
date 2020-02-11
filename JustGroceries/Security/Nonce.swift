@@ -14,7 +14,7 @@ class Nonce {
     fileprivate var currentNonce: String?
 
     // Adapted from https://auth0.com/docs/api-auth/tutorials/nonce#generate-a-cryptographically-random-nonce
-    private func randomNonceString(length: Int = 32) -> String {
+    func randomNonceString(length: Int = 32) -> String {
         precondition(length > 0)
         let charset: Array<Character> =
             Array("0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._")
@@ -45,16 +45,9 @@ class Nonce {
         
         return result
     }
-    
+        
     @available(iOS 13, *)
-    func dealWithNonce() -> String {
-        let nonce = randomNonceString()
-        currentNonce = nonce
-        return sha256(nonce)
-    }
-    
-    @available(iOS 13, *)
-    private func sha256(_ input: String) -> String {
+    func sha256(_ input: String) -> String {
         let inputData = Data(input.utf8)
         let hashedData = SHA256.hash(data: inputData)
         let hashString = hashedData.compactMap {

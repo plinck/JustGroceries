@@ -97,38 +97,26 @@ struct LoginView: View {
     private func loginApple() {
         // All sign in requests need an ASAuthorizationAppleIDRequest
         let request = ASAuthorizationAppleIDProvider().createRequest()
-                
+        let myNonce = Nonce()
+        
         // These are the pieces of data I want returned from apple signin request
         request.requestedScopes = [.fullName, .email]
+        request.nonce = myNonce.randomNonceString()
 
         // Generate the controller which will display the sign in dialog
-        performAppleSignIn(using: [request])
-    }
-        
-    /// Prompts the user if an existing iCloud Keychain credential or Apple ID credential is found.
-    private func performExistingAccountSetupFlows() {
-        #if !targetEnvironment(simulator)
-        // Note that this won't do anything in the simulator.  You need to
-        // be on a real device or you'll just get a failure from the call.
-        let requests = [
-            ASAuthorizationAppleIDProvider().createRequest(),
-            ASAuthorizationPasswordProvider().createRequest()
-        ]
-        
-        performAppleSignIn(using: requests)
-        #endif
+        performAppleSignIn(using: [request], nonce: request.nonce)
     }
     
     // Perform the signin
-    private func performAppleSignIn(using requests: [ASAuthorizationRequest]) {
+    private func performAppleSignIn(using requests: [ASAuthorizationRequest], nonce: String?) {
         // Generate the delegate and assign it to the class’ property
-        appleSignInDelegates = SignInWithAppleDelegates(window: window) { success in
+        appleSignInDelegates = SignInWithAppleDelegates(window: window, nonce: nonce) { success in
             if success {
-                // update UI
+                print("appleSignInDelegates created successfully")
             } else {
-                // show the user an error
+                print("appleSignInDelegates unsuccessful")
             }
-        }        
+        }
         
         // Generate the ASAuthorizationController as before,
         // but this time, tell it to use custom delegate class
@@ -139,6 +127,20 @@ struct LoginView: View {
         // By calling performRequests(), you’re asking iOS
         // to display the Sign In with Apple modal view
         controller.performRequests()
+    }
+        
+    /// Prompts the user if an existing iCloud Keychain credential or Apple ID credential is found.
+    private func performAppleExistingAccountSetupFlows() {
+        #if !targetEnvironment(simulator)
+        // Note that this won't do anything in the simulator.  You need to
+        // be on a real device or you'll just get a failure from the call.
+        let requests = [
+            ASAuthorizationAppleIDProvider().createRequest(),
+            ASAuthorizationPasswordProvider().createRequest()
+        ]
+        
+        performAppleSignIn(using: requests, nonce: nil)
+        #endif
     }
     
     // Google signin
@@ -158,7 +160,7 @@ struct LoginView: View {
         }
         
         func attemptLoginGoogle() {
-            // MARK: - Fixed google not be able to login again afert first attempt
+            // MARK: - Fixed google not be able to login again after first attempt
             // I replaced the line below to force the user to go back to content view
             // created vc from rootview controller which is contentView (hostted)
             // Then, set that as the view google goes back to after login
