@@ -20,7 +20,7 @@ struct SignUp: View {
     
     var body: some View {
         VStack {
-            Text("Sign Uo")
+            Text("Sign Up")
                 .font(.subheadline)
             
             Group {
@@ -69,9 +69,6 @@ struct SignUp: View {
             
             //.padding()
             Spacer()
-            NavigationLink(destination: SignUp()) {
-                Text("Don't have a login? Click to Sign Up").italic()
-            }
         }
     }
     

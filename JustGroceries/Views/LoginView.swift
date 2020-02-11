@@ -8,9 +8,13 @@
 
 import SwiftUI
 import GoogleSignIn
+import AuthenticationServices
 
 struct LoginView: View {
     
+    @Environment(\.window) var window: UIWindow?
+    @State var appleSignInDelegates: SignInWithAppleDelegates! = nil
+
     //MARK: Properties
     @State var email: String = ""
     @State var password: String = ""
@@ -26,7 +30,7 @@ struct LoginView: View {
 
             Group {
                 HStack {
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .trailing) {
                         Text("Email:")
                             .frame(maxHeight: .infinity)
                             .padding(.bottom, 4)
@@ -51,42 +55,28 @@ struct LoginView: View {
             
             Button(action: logIn) {
                 HStack {
-                    Image(systemName: "envelope").resizable().frame(width: 50, height: 50, alignment: .center)
-                    Text("Sign In with email").bold().foregroundColor(.yellow)
-                }.frame(width: 250, height: 60, alignment: .center)
+                    Image(systemName: "envelope").resizable().frame(width: 30, height: 30, alignment: .center)
+                    Text("Sign In with email").bold()
+                }.frame(width: 280, height: 60, alignment: .center)
             }
-            .padding(.horizontal)
             .background(Color.white)
-            .cornerRadius(8.0)
+            .cornerRadius(4.0)
             .shadow(radius: 4.0)
-            
-            Button(action: logIn) {
-                HStack {
-                    // Image(systemName: "heart.fill")
-                    Image("ic_apple").renderingMode(.original).resizable().frame(width: 50, height: 50, alignment: .center)
-                    Text("Sign In with apple ID")
-                }.frame(width: 250, height: 60, alignment: .center)
-            }
-            .padding(.horizontal)
-            .background(Color.white)
-            .cornerRadius(8.0)
-            .shadow(radius: 4.0)
-
+                        
+            SignInWithApple()
+                .frame(width: 280, height: 60)
+                .shadow(radius: 4.0)
+                .onTapGesture(perform: loginApple)
 
             Button(action: logginGoogle, label: {
                 HStack { Image("ic_google").renderingMode(.original).resizable().frame(width: 50, height: 50, alignment: .center)
                     Text("Signin with Google")
-                }.frame(width: 250, height: 60, alignment: .center)
+                }.frame(width: 280, height: 60, alignment: .center)
             })
-            .padding(.horizontal)
             .background(Color.white)
-            .cornerRadius(8.0)
+            .cornerRadius(4.0)
             .shadow(radius: 4.0)
-            
-//            let button = GIDSignInButton()
-//            button.colorScheme = .dark
-                        
-            //.padding()
+                                    
             Spacer()
             NavigationLink(destination: SignUp()) {
                 Text("Don't have a login? Click to Sign Up").italic()
@@ -106,14 +96,63 @@ struct LoginView: View {
         }
     }
     
+    // Apple Sign In
+    private func loginApple() {
+        // All sign in requests need an ASAuthorizationAppleIDRequest
+        let request = ASAuthorizationAppleIDProvider().createRequest()
+        
+        // These are the pieces of data I want returned from apple signin request
+        request.requestedScopes = [.fullName, .email]
+        
+        // Generate the controller which will display the sign in dialog
+        performAppleSignIn(using: [request])
+    }
+    
+    /// Prompts the user if an existing iCloud Keychain credential or Apple ID credential is found.
+    private func performExistingAccountSetupFlows() {
+        #if !targetEnvironment(simulator)
+        // Note that this won't do anything in the simulator.  You need to
+        // be on a real device or you'll just get a failure from the call.
+        let requests = [
+            ASAuthorizationAppleIDProvider().createRequest(),
+            ASAuthorizationPasswordProvider().createRequest()
+        ]
+        
+        performAppleSignIn(using: requests)
+        #endif
+    }
+    
+    // Perform the signin
+    private func performAppleSignIn(using requests: [ASAuthorizationRequest]) {
+        // Generate the delegate and assign it to the class’ property
+        appleSignInDelegates = SignInWithAppleDelegates(window: window) { success in
+            if success {
+                // update UI
+            } else {
+                // show the user an error
+            }
+        }
+        
+        // Generate the ASAuthorizationController as before,
+        // but this time, tell it to use custom delegate class
+        let controller = ASAuthorizationController(authorizationRequests: requests)
+        controller.delegate = appleSignInDelegates
+        controller.presentationContextProvider = appleSignInDelegates
+        
+        // By calling performRequests(), you’re asking iOS
+        // to display the Sign In with Apple modal view
+        controller.performRequests()
+    }
+
+    
     // Google signin
-    func logginGoogle() {
+    private func logginGoogle() {
         let socialLogin = SocialLogin()
         socialLogin.attemptLoginGoogle()
     }
-    
+
     // Google or other social media signin
-    struct SocialLogin: UIViewRepresentable {
+    private struct SocialLogin: UIViewRepresentable {
         
         func makeUIView(context: UIViewRepresentableContext<SocialLogin>) -> UIView {
             return UIView()

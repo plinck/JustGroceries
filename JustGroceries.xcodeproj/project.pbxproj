@@ -13,12 +13,20 @@
 		2379C93423EC72A50094D6A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2379C93323EC72A50094D6A8 /* Assets.xcassets */; };
 		2379C93723EC72A50094D6A8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2379C93623EC72A50094D6A8 /* Preview Assets.xcassets */; };
 		2379C93A23EC72A50094D6A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2379C93823EC72A50094D6A8 /* LaunchScreen.storyboard */; };
+		23883F0823F233ED0037FC5C /* SignInWithApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23883F0723F233ED0037FC5C /* SignInWithApple.swift */; };
+		23883F0A23F23DAF0037FC5C /* SigninWithAppleDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23883F0923F23DAF0037FC5C /* SigninWithAppleDelegates.swift */; };
 		23A1507D23EF214700B9316E /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A1507C23EF214700B9316E /* SignUp.swift */; };
 		23C7158723EC99C200BE1A9C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7158623EC99C200BE1A9C /* User.swift */; };
 		23C7158923EC9B6700BE1A9C /* FirebaseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7158823EC9B6700BE1A9C /* FirebaseSession.swift */; };
 		23C7158B23ECDE2200BE1A9C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 23C7158A23ECDE2200BE1A9C /* Default-568h@2x.png */; };
 		23C7158D23ECE2D100BE1A9C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C7158C23ECE2D100BE1A9C /* LoginView.swift */; };
 		23DA193923EC7C0A0053BB9C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 23DA193823EC7C0A0053BB9C /* GoogleService-Info.plist */; };
+		23FD6A1423F24DC000017C1C /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FD6A1023F24DC000017C1C /* UserData.swift */; };
+		23FD6A1523F24DC000017C1C /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FD6A1123F24DC000017C1C /* Keychain.swift */; };
+		23FD6A1623F24DC000017C1C /* SharedWebCredential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FD6A1223F24DC000017C1C /* SharedWebCredential.swift */; };
+		23FD6A1723F24DC000017C1C /* UserDataKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FD6A1323F24DC000017C1C /* UserDataKeychain.swift */; };
+		23FD6A1923F24E7B00017C1C /* WebApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FD6A1823F24E7B00017C1C /* WebApi.swift */; };
+		23FD6A1B23F2550C00017C1C /* EnvironmentWindowKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FD6A1A23F2550C00017C1C /* EnvironmentWindowKey.swift */; };
 		9984A68AEA2E70A5E9F8EFC9 /* libPods-JustGroceries.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACEED604202FC5393B0254BD /* libPods-JustGroceries.a */; };
 /* End PBXBuildFile section */
 
@@ -32,12 +40,20 @@
 		2379C93923EC72A50094D6A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2379C93B23EC72A50094D6A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23883F0623F09EB40037FC5C /* JustGroceries.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JustGroceries.entitlements; sourceTree = "<group>"; };
+		23883F0723F233ED0037FC5C /* SignInWithApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithApple.swift; sourceTree = "<group>"; };
+		23883F0923F23DAF0037FC5C /* SigninWithAppleDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninWithAppleDelegates.swift; sourceTree = "<group>"; };
 		23A1507C23EF214700B9316E /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUp.swift; path = JustGroceries/Models/SignUp.swift; sourceTree = SOURCE_ROOT; };
 		23C7158623EC99C200BE1A9C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		23C7158823EC9B6700BE1A9C /* FirebaseSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSession.swift; sourceTree = "<group>"; };
 		23C7158A23ECDE2200BE1A9C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		23C7158C23ECE2D100BE1A9C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		23DA193823EC7C0A0053BB9C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		23FD6A1023F24DC000017C1C /* UserData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		23FD6A1123F24DC000017C1C /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		23FD6A1223F24DC000017C1C /* SharedWebCredential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedWebCredential.swift; sourceTree = "<group>"; };
+		23FD6A1323F24DC000017C1C /* UserDataKeychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataKeychain.swift; sourceTree = "<group>"; };
+		23FD6A1823F24E7B00017C1C /* WebApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebApi.swift; sourceTree = "<group>"; };
+		23FD6A1A23F2550C00017C1C /* EnvironmentWindowKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentWindowKey.swift; sourceTree = "<group>"; };
 		4F9107873AED9E61EC5A0076 /* Pods-JustGroceries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGroceries.release.xcconfig"; path = "Target Support Files/Pods-JustGroceries/Pods-JustGroceries.release.xcconfig"; sourceTree = "<group>"; };
 		ACEED604202FC5393B0254BD /* libPods-JustGroceries.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JustGroceries.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB96408318900099C54B052D /* Pods-JustGroceries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustGroceries.debug.xcconfig"; path = "Target Support Files/Pods-JustGroceries/Pods-JustGroceries.debug.xcconfig"; sourceTree = "<group>"; };
@@ -83,6 +99,8 @@
 				23C7158223EC992000BE1A9C /* Main */,
 				23C7158323EC994C00BE1A9C /* Views */,
 				23C7158523EC999D00BE1A9C /* Models */,
+				23883F0B23F23DE90037FC5C /* Security */,
+				23FD6A0F23F24D8500017C1C /* CredentialStorage */,
 				23C7158423EC997400BE1A9C /* assets */,
 				2379C93523EC72A50094D6A8 /* Preview Content */,
 			);
@@ -95,6 +113,14 @@
 				2379C93623EC72A50094D6A8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		23883F0B23F23DE90037FC5C /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				23883F0923F23DAF0037FC5C /* SigninWithAppleDelegates.swift */,
+			);
+			path = Security;
 			sourceTree = "<group>";
 		};
 		23C7158223EC992000BE1A9C /* Main */ = {
@@ -113,6 +139,7 @@
 				23A1507C23EF214700B9316E /* SignUp.swift */,
 				2379C93123EC72A40094D6A8 /* ContentView.swift */,
 				23C7158C23ECE2D100BE1A9C /* LoginView.swift */,
+				23883F0723F233ED0037FC5C /* SignInWithApple.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -132,6 +159,19 @@
 				23C7158823EC9B6700BE1A9C /* FirebaseSession.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		23FD6A0F23F24D8500017C1C /* CredentialStorage */ = {
+			isa = PBXGroup;
+			children = (
+				23FD6A1A23F2550C00017C1C /* EnvironmentWindowKey.swift */,
+				23FD6A1823F24E7B00017C1C /* WebApi.swift */,
+				23FD6A1123F24DC000017C1C /* Keychain.swift */,
+				23FD6A1223F24DC000017C1C /* SharedWebCredential.swift */,
+				23FD6A1023F24DC000017C1C /* UserData.swift */,
+				23FD6A1323F24DC000017C1C /* UserDataKeychain.swift */,
+			);
+			path = CredentialStorage;
 			sourceTree = "<group>";
 		};
 		B79E0EE478047077548E632D /* Pods */ = {
@@ -272,8 +312,16 @@
 				23C7158D23ECE2D100BE1A9C /* LoginView.swift in Sources */,
 				23C7158923EC9B6700BE1A9C /* FirebaseSession.swift in Sources */,
 				23C7158723EC99C200BE1A9C /* User.swift in Sources */,
+				23883F0A23F23DAF0037FC5C /* SigninWithAppleDelegates.swift in Sources */,
+				23FD6A1723F24DC000017C1C /* UserDataKeychain.swift in Sources */,
+				23FD6A1523F24DC000017C1C /* Keychain.swift in Sources */,
 				2379C92E23EC72A40094D6A8 /* AppDelegate.swift in Sources */,
 				2379C93023EC72A40094D6A8 /* SceneDelegate.swift in Sources */,
+				23FD6A1623F24DC000017C1C /* SharedWebCredential.swift in Sources */,
+				23883F0823F233ED0037FC5C /* SignInWithApple.swift in Sources */,
+				23FD6A1B23F2550C00017C1C /* EnvironmentWindowKey.swift in Sources */,
+				23FD6A1923F24E7B00017C1C /* WebApi.swift in Sources */,
+				23FD6A1423F24DC000017C1C /* UserData.swift in Sources */,
 				2379C93223EC72A40094D6A8 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
