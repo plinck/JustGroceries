@@ -17,16 +17,18 @@ class SignInWithAppleDelegates: NSObject {
 
     private let signInSucceeded: (Bool) -> Void
     private weak var window: UIWindow!
-    private var currentNonce: String?
-    
+    private var rawNonce: String?
+    private var hashedNonce: String?
+
     init(window: UIWindow?, onSignedIn: @escaping (Bool) -> Void) {
         self.window = window
         self.signInSucceeded = onSignedIn
     }
     
-    init(window: UIWindow?, nonce: String?, onSignedIn: @escaping (Bool) -> Void) {
+    init(window: UIWindow?, rawNonce: String?,  hashedNonce: String?, onSignedIn: @escaping (Bool) -> Void) {
         self.window = window
-        self.currentNonce = nonce
+        self.rawNonce = rawNonce
+        self.hashedNonce = hashedNonce
         self.signInSucceeded = onSignedIn
     }    
     
@@ -159,10 +161,11 @@ extension SignInWithAppleDelegates {
     
     // Login to firebase when login with apple successful
     private func loginAppleToFirebase (appleIDCredential: ASAuthorizationAppleIDCredential) {
-        guard let nonce = currentNonce else {
-            fatalError("Invalid state: A login callback was received, but no login request was sent.")
+        guard let rawNonce = rawNonce else {
+            print("rawNonce not defined - Invalid state: A login callback was received, but no login request was sent.")
+            return
         }
-        
+
         guard let appleIDToken = appleIDCredential.identityToken else {
             print("Unable to fetch identity token")
             return
@@ -175,8 +178,7 @@ extension SignInWithAppleDelegates {
         // Initialize a Firebase credential.
         let credential = OAuthProvider.credential(withProviderID: "apple.com",
                                                   idToken: idTokenString,
-                                                  rawNonce: nonce,
-                                                  accessToken: nonce)
+                                                  rawNonce: rawNonce)
         
         // Sign in with Firebase.
         Auth.auth().signIn(with: credential) { (authResult, error) in

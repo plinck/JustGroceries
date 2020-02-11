@@ -98,19 +98,21 @@ struct LoginView: View {
         // All sign in requests need an ASAuthorizationAppleIDRequest
         let request = ASAuthorizationAppleIDProvider().createRequest()
         let myNonce = Nonce()
+        let rawNonce = myNonce.randomNonceString()
+        let hashedNonce = myNonce.sha256(rawNonce)
         
         // These are the pieces of data I want returned from apple signin request
         request.requestedScopes = [.fullName, .email]
-        request.nonce = myNonce.randomNonceString()
+        request.nonce = hashedNonce
 
         // Generate the controller which will display the sign in dialog
-        performAppleSignIn(using: [request], nonce: request.nonce)
+        performAppleSignIn(using: [request], rawNonce: rawNonce, hashedNonce: hashedNonce)
     }
     
     // Perform the signin
-    private func performAppleSignIn(using requests: [ASAuthorizationRequest], nonce: String?) {
+    private func performAppleSignIn(using requests: [ASAuthorizationRequest], rawNonce: String?, hashedNonce: String?) {
         // Generate the delegate and assign it to the class’ property
-        appleSignInDelegates = SignInWithAppleDelegates(window: window, nonce: nonce) { success in
+    appleSignInDelegates = SignInWithAppleDelegates(window: window, rawNonce: rawNonce, hashedNonce: hashedNonce) { success in
             if success {
                 print("appleSignInDelegates created successfully")
             } else {
@@ -139,7 +141,7 @@ struct LoginView: View {
             ASAuthorizationPasswordProvider().createRequest()
         ]
         
-        performAppleSignIn(using: requests, nonce: nil)
+        performAppleSignIn(using: requests, rawNonce: nil, hashedNonce: nil)
         #endif
     }
     
